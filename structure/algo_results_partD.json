@@ -1,0 +1,313 @@
+{
+ "node_budget": 100000,
+ "trials": 8,
+ "rows": [
+  {
+   "N": 10,
+   "family": "Ncycle",
+   "exhaust_nodes_median": 110.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 19.5,
+   "nsol_random_target": [
+    1,
+    4,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "N": 10,
+   "family": "coprime",
+   "exhaust_nodes_median": 115.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 15.0,
+   "nsol_random_target": [
+    0,
+    0,
+    0,
+    2,
+    1,
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "N": 10,
+   "family": "random",
+   "exhaust_nodes_median": 139.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 18.5,
+   "nsol_random_target": [
+    2,
+    1,
+    0,
+    1,
+    0,
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "N": 12,
+   "family": "Ncycle",
+   "exhaust_nodes_median": 454.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 73.5,
+   "nsol_random_target": [
+    1,
+    3,
+    2,
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "N": 12,
+   "family": "coprime",
+   "exhaust_nodes_median": 424.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 79.0,
+   "nsol_random_target": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+   ]
+  },
+  {
+   "N": 12,
+   "family": "random",
+   "exhaust_nodes_median": 425.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 228.5,
+   "nsol_random_target": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "N": 14,
+   "family": "Ncycle",
+   "exhaust_nodes_median": 1910.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 190.5,
+   "nsol_random_target": [
+    1,
+    0,
+    3,
+    2,
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "N": 14,
+   "family": "coprime",
+   "exhaust_nodes_median": 2187.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 63.5,
+   "nsol_random_target": [
+    1,
+    0,
+    1,
+    0,
+    2,
+    3,
+    1,
+    1
+   ]
+  },
+  {
+   "N": 14,
+   "family": "random",
+   "exhaust_nodes_median": 1935.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 600.5,
+   "nsol_random_target": [
+    1,
+    3,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "N": 16,
+   "family": "Ncycle",
+   "exhaust_nodes_median": 7604.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 3710.5,
+   "nsol_random_target": [
+    5,
+    1,
+    0,
+    2,
+    0,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "N": 16,
+   "family": "coprime",
+   "exhaust_nodes_median": 8650.5,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 548.0,
+   "nsol_random_target": [
+    0,
+    3,
+    2,
+    1,
+    1,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "N": 16,
+   "family": "random",
+   "exhaust_nodes_median": 8338.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 3644.5,
+   "nsol_random_target": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "N": 18,
+   "family": "Ncycle",
+   "exhaust_nodes_median": 38224.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 4469.0,
+   "nsol_random_target": [
+    0,
+    0,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "N": 18,
+   "family": "coprime",
+   "exhaust_nodes_median": 39608.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 10752.0,
+   "nsol_random_target": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "N": 18,
+   "family": "random",
+   "exhaust_nodes_median": 38829.0,
+   "exhaust_completed": 8,
+   "planted_nodes_median": 5547.5,
+   "nsol_random_target": [
+    0,
+    1,
+    2,
+    0,
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "N": 20,
+   "family": "Ncycle",
+   "exhaust_nodes_median": null,
+   "exhaust_completed": 0,
+   "planted_nodes_median": 16707,
+   "nsol_random_target": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "N": 20,
+   "family": "coprime",
+   "exhaust_nodes_median": null,
+   "exhaust_completed": 0,
+   "planted_nodes_median": 53358,
+   "nsol_random_target": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "N": 20,
+   "family": "random",
+   "exhaust_nodes_median": null,
+   "exhaust_completed": 0,
+   "planted_nodes_median": 6577,
+   "nsol_random_target": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  }
+ ],
+ "note": "exhausted=True in word_solver stats means the node budget was hit"
+}

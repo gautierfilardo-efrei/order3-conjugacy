@@ -1,0 +1,302 @@
+% Journal of Symbolic Computation (Elsevier) — elsarticle template.
+% Compile: pdflatex -> bibtex -> pdflatex x2.  Bibliography style: elsarticle-num.
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array,graphicx}
+\usepackage[hidelinks]{hyperref}\usepackage{url}
+\graphicspath{{figures/}{../figures/}}
+\setlength{\emergencystretch}{1.5em}
+\newtheorem{thm}{Theorem}[section]\newtheorem{lem}[thm]{Lemma}\newtheorem{cor}[thm]{Corollary}\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}\newtheorem{defi}[thm]{Definition}\newtheorem{prob}[thm]{Problem}\newtheorem{obs}[thm]{Observation}
+\theoremstyle{remark}\newtheorem{rem}[thm]{Remark}
+\newcommand{\ZZ}{\mathbb Z}\newcommand{\Sym}{\operatorname{Sym}}\newcommand{\Alt}{\operatorname{Alt}}
+\newcommand{\ctype}{\operatorname{ctype}}\DeclareMathOperator{\Cent}{C}\DeclareMathOperator{\supp}{supp}
+\newcommand{\Pthree}{\mathsf{P}_3}\newcommand{\Dzero}{\mathsf{Conj}_3}\newcommand{\TR}{T_{\mathcal R}}
+\journal{Journal of Symbolic Computation}
+\begin{document}
+\begin{frontmatter}
+\title{One-variable equations of length three over symmetric groups: normal forms, the hardness of order-three conjugacy, and layered permutation walks}
+\author[a]{Gautier-Edouard Filardo}
+\ead{gautier-edouard.filardo@efrei.fr}
+\affiliation[a]{organization={Efrei Research Lab, Efrei Paris Panth\'eon-Assas},city={Villejuif},country={France}}
+\begin{abstract}
+We study the equation $x\,a\,x^{2}=c$ with unknown $x$ and constants $a,c$ in the symmetric group $\Sym(N)$, where $N$ is part of the input. Every one-variable word with at most two occurrences of the unknown reduces to root extraction or conjugacy and is decided in polynomial time from cycle types, and every word with three positive occurrences is equivalent to this one, so it is the shortest one-variable shape over permutation groups whose complexity is not classified. We prove that its restriction to solutions of order three -- equivalently, deciding whether two permutations are conjugate by an element of order three -- is NP-complete, already when $a$ has all cycles of one prime length and $c$ commutes with $a$; the reduction is from Numerical 3-Dimensional Matching and every certificate has cycle type $3^{N/3}$. Consequently the natural algorithm that enumerates the cycle type of the unknown cannot be polynomial per type unless $\mathrm P=\mathrm{NP}$. We give the polynomial special cases (bounded support of $a$, solutions commuting with $a$, pairs of involutions), an exact first-moment identity for the number of solutions, and numerical evidence that no cycle-type invariant of the pair decides solvability. Finally we show that the round of a two-register layered permutation walk proposed as a one-way function is exactly this equation in the wreath product $\Alt(m)\wr C_2$, and we measure the cost of constraint-propagation solvers, which grows as $|\Alt(m)|^{\Theta(1)}$; the resulting meet-in-the-middle attack costs between $2^{165}$ and $2^{196}$ at the parameters originally proposed. The complexity of the unrestricted equation remains open.
+\end{abstract}
+\begin{keyword}
+permutation groups \sep equations in groups \sep NP-completeness \sep cycle types \sep conjugacy \sep wreath products \sep one-way functions
+\MSC[2020] 20B40 \sep 68Q17 \sep 20F10 \sep 94A60
+\end{keyword}
+\end{frontmatter}
+
+
+
+
+\section{Introduction}
+
+Let $\Sym(N)$ act on $[N]=\{0,\ldots,N-1\}$, with products read right to left, $(pq)(j)=p(q(j))$. A \emph{one-variable word} is a product $w(x)=c_0x^{\varepsilon_1}c_1x^{\varepsilon_2}\cdots x^{\varepsilon_\ell}c_\ell$ with constants $c_i\in\Sym(N)$ and $\varepsilon_i\in\{\pm1\}$; $\ell$ is its \emph{$x$-length}. We are interested in the decision problem
+\[
+ \text{given } a,c\in\Sym(N),\ \text{is there } x\in\Sym(N)\text{ with } x\,a\,x^{2}=c\,?
+\]
+which we call $\Pthree$. The group is part of the input: $N$ grows, the shape of the equation is fixed.
+
+This regime differs from the classical one. Goldmann and Russell \cite{goldmann2002} classified the complexity of equation satisfiability over a \emph{fixed} finite group, with an unbounded number of variables and unbounded word length: polynomial for nilpotent groups, NP-complete for non-solvable ones; the solvable non-nilpotent case has since been narrowed under the exponential time hypothesis \cite{horvath2011,idziak2022,weiss2020}. When instead the group is a permutation group given by generators, membership is polynomial by Schreier--Sims \cite{sims1970,seress2003,luks1993}, while a number of natural refinements are NP-complete: containing a fixed-point-free element or an element of a prescribed cycle type \cite{lubiw1981,cameronwu2010,arvind2013}, subgroup distance \cite{buchheim2009}, knapsack and subset-sum variants \cite{lohrey2022mfcs}, and, most recently, the cycle-type problem for groups generated by two commuting permutations and for cosets of cyclic groups \cite{lohreyrosowski2025}. Our problem has no generators in the input at all: its only data are two permutations, and its unknown ranges over the whole of $\Sym(N)$.
+
+For one-variable words of small $x$-length over $\Sym(N)$ everything is easy. Length one is trivial or conjugacy; length two is square-root extraction or conjugacy (Proposition~\ref{prop:short}). Length three is the first case where the classical invariants fail, and all positive words of length three are one problem (Proposition~\ref{prop:three}). Word maps with constants on symmetric groups have been studied for their equidistribution and fibre statistics \cite{larsen2012,shalev2009,garion2009,schneider2023,alekseev2025}; those results explain the statistics of the solution set (Section~\ref{sec:stat}) but have no algorithmic content.
+
+Our motivation came from cryptanalysis. A candidate one-way function of \cite{filardo2026cpwi} iterates, over the alternating group $\Alt(m)$, a two-register recurrence $U'=UAVU$, $V'=VBUV$ whose constants $(A,B)$ are selected by the input bits; inverting $n$ rounds is exactly $n$ instances of the single-round system, and we show (Theorem~\ref{thm:wreath}) that the single-round system \emph{is} $\Pthree$ inside the wreath product $\Alt(m)\wr C_2\le\Sym(2m)$. The security of that construction therefore rests on the complexity of $\Pthree$, which is why we set out to classify it. The pattern is familiar from group-based cryptography, where the hardness of a construction reduced to an equation whose structure was then exploited: Euclidean structure in $\mathrm{SL}_2$ for the Tillich--Z\'emor and LPS hash functions \cite{tillich1994,petit2008,grassl2011}, linear representations for braid-group conjugacy \cite{cheon2003,myasnikov2005,tsaban2015}. No such structure is available here: equations over free groups have a rich theory \cite{lyndon1960}, but $\Sym(N)$ with $N$ in the input is neither fixed nor free.
+
+\paragraph{Results.} We did not classify $\Pthree$, but we located it precisely.
+\begin{enumerate}
+\item \emph{Short words} (Section~\ref{sec:short}). Every one-variable word of $x$-length at most two over $\Sym(N)$ is decided in polynomial time; every word with three positive occurrences of $x$ is polynomially equivalent to $\Pthree$, whose solution sets are in explicit bijection.
+\item \emph{Structure} (Section~\ref{sec:struct}). $\Pthree$ is in NP and is polynomial when the support of $a$ is bounded, when only solutions commuting with $a$ are sought, and when $a$ and $c$ are involutions. Its solution count satisfies an exact first-moment identity, $\sum_{c\in\gamma}\#\{x:xax^{2}=c\}=\#\{x:\ctype(ax^{3})=\gamma\}$, whose right-hand side is a class-algebra quantity. Exhaustive tables for $N\le9$ show that no invariant built from the cycle types of short words in $a,c$ decides solvability from $N=6$ on.
+\item \emph{Hardness} (Section~\ref{sec:hard}). Deciding whether two permutations are conjugate by an element of order three -- the restriction of $\Pthree$ to solutions with $x^{3}=1$ -- is NP-complete, already for $a$ with all cycles of one prime length $L\equiv2\pmod3$, for $c\in\Cent(a)$, and with certificates of cycle type $3^{N/3}$ (Theorem~\ref{thm:main}). Hence $\Pthree$ restricted to a prescribed cycle type of the unknown is polynomial for types with parts at most two and NP-complete for the type $3^{N/3}$, and no algorithm that enumerates the cycle type of $x$ can be polynomial per type unless $\mathrm P=\mathrm{NP}$ (Corollary~\ref{cor:noenum}).
+\item \emph{Application} (Section~\ref{sec:cpwi}). The single-round system of the layered walk is $\Pthree$ in $\Alt(m)\wr C_2$; constraint-propagation solvers reach a planted solution after about $0.38\,m$ free decisions with domains of size about $m$, so their cost is $|\Alt(m)|^{\Theta(1)}$, and the resulting meet-in-the-middle attack costs between $2^{165}$ and $2^{196}$ at the parameters $(n,m)=(256,36)$ originally proposed -- below exhaustive search, above the $128$-bit target.
+\end{enumerate}
+Section~\ref{sec:open} lists what remains open. Every statement labelled ``verified'' was checked by exhaustive or randomised computation whose scripts and records accompany the paper.
+
+\section{Short words}\label{sec:short}
+
+We write $\ctype(p)$ for the cycle type of $p$ (a partition of $N$), $\Cent(p)$ for its centraliser, and $p\sim q$ for conjugacy. Two permutations are conjugate iff they have the same cycle type, and a conjugator is found in linear time; the conjugators form a coset of $\Cent(p)$.
+
+\begin{prop}[$x$-length at most two]\label{prop:short}
+Every one-variable equation $w(x)=c$ of $x$-length at most two over $\Sym(N)$ is decided, and a solution produced, in polynomial time.
+\end{prop}
+\begin{proof}
+After multiplying by the outer constants, a word of $x$-length one is $x^{\pm1}=c'$. A word of $x$-length two is $x^{\varepsilon_1}c_1x^{\varepsilon_2}=c'$. If $\varepsilon_1=-\varepsilon_2$ it is the conjugacy $x^{\mp1}c_1x^{\pm1}=c'$, decided by $\ctype(c_1)=\ctype(c')$. If $\varepsilon_1=\varepsilon_2=1$ then $xc_1x=c'$ is equivalent to $(xc_1)^{2}=c'c_1$: $y=xc_1$ is a square root of $c'c_1$, which exists iff the cycles of even length of $c'c_1$ occur an even number of times for every length \cite{blum1974}, and then $x=yc_1^{-1}$. If $\varepsilon_1=\varepsilon_2=-1$, invert both sides.
+\end{proof}
+
+\begin{prop}[positive words of $x$-length three]\label{prop:three}
+For constants $a,b,c$ the equation $x\,a\,x\,b\,x=c$ has the same number of solutions as $z\,e\,z^{2}=f$ with $e=b^{-1}a$ and $f=(ca)^{-1}$, via the bijection $z=(xa)^{-1}$. Every one-variable word with three positive occurrences of $x$ is therefore polynomially equivalent to $\Pthree$, and $\Pthree$ is self-dual: $x\,a\,x^{2}=c$ iff $y\,c\,y^{2}=a$ with $y=x^{-1}$.
+\end{prop}
+\begin{proof}
+Put $y=xa$. Then $xaxbx=y\,(ya^{-1})\,b\,(ya^{-1})=y^{2}(a^{-1}b)\,y\,a^{-1}$, so the equation reads $y^{2}(a^{-1}b)y=ca$; inverting both sides and putting $z=y^{-1}$ gives $z\,(a^{-1}b)^{-1}z^{2}=(ca)^{-1}$. A general positive word $c_0xc_1xc_2xc_3=c$ is of this form after multiplying by $c_0^{-1}$ and $c_3^{-1}$. For self-duality, $c=xax^{2}$ gives $x^{-1}cx^{-2}=a$.
+\end{proof}
+
+\begin{rem}
+Words of $x$-length three with mixed signs, such as $x\,a\,x\,b\,x^{-1}=c$, are not covered by Proposition~\ref{prop:three}; they are a distinct family that we do not treat here.
+\end{rem}
+
+Two elementary reformulations are used throughout.
+\begin{lem}[conjugation form]\label{lem:conj}
+$x\,a\,x^{2}=c$ if and only if $x^{-1}cx=a\,x^{3}$. In particular every solution satisfies $\ctype(a\,x^{3})=\ctype(c)$, and, writing $b=xax^{-1}$, one has $c=b\,x^{3}$, i.e.\ $x^{3}=b^{-1}c$ with $b\sim a$.
+\end{lem}
+\begin{proof}
+Multiply $xax^{2}=c$ on the left by $x^{-1}$ and on the right by $x$; the second form is $c=(xax^{-1})x^{3}$.
+\end{proof}
+
+\section{Structure of the solution set}\label{sec:struct}
+
+\subsection{Polynomial special cases}
+
+\begin{lem}[bounded support]\label{lem:support}
+If $|\supp(a)|=s$, $\Pthree$ is decided in time $N^{O(s)}$.
+\end{lem}
+\begin{proof}[Proof sketch]
+By Lemma~\ref{lem:conj}, $c=bx^{3}$ with $b=xax^{-1}$, and $b$ is determined by the images $x(p)$, $p\in\supp(a)$, of which there are at most $N^{s}$ choices. For each choice one must decide whether $t=b^{-1}c$ has a cube root $x$ with the $s$ prescribed images. A cube root of $t$ is described by a partition of the cycles of $t$ into singletons (allowed only for lengths not divisible by $3$, where $x=t^{k}$ on the cycle, $3k\equiv1$) and triples of equal length interleaved by $x$ with a choice of cyclic order and phases. The prescribed images involve at most $2s$ cycles of $t$ and fix their grouping and phases up to a number of choices bounded by a function of $s$; the remaining cycles are free, and their grouping exists iff, for every length divisible by $3$, the number of remaining cycles of that length is divisible by $3$. All of this is checked in polynomial time. (Verified exhaustively for $s=2$, $N=6$: $30/30$ instances.)
+\end{proof}
+
+\begin{lem}[solutions commuting with the constant]\label{lem:cent}
+The solutions of $x\,a\,x^{2}=c$ that commute with $a$ are exactly the cube roots of $a^{-1}c$ in $\Cent(a)$; they exist only if $c\in\Cent(a)$. If $a$ consists of $n$ cycles of one length $L$ with $\gcd(L,3)=1$, so that $\Cent(a)\cong\ZZ_L\wr\Sym(n)$, write $t=a^{-1}c=(r,\rho)$ with $\rho\in\Sym(n)$ the induced permutation of the cycles and $r\in\ZZ_L^{n}$ the rotations. Then $t$ has a cube root in $\Cent(a)$ iff, for every length $\ell$ divisible by $3$ and every residue $\varrho\in\ZZ_L$, the number of $\rho$-cycles of length $\ell$ whose rotation sum is $\varrho$ is divisible by $3$. In particular this case is decided in polynomial time.
+\end{lem}
+\begin{proof}
+If $x$ commutes with $a$ then $xax^{2}=ax^{3}$, so the equation is $x^{3}=a^{-1}c$, and $a^{-1}c=x^{3}$ commutes with $a$. For the criterion, a cube root $(v,\pi)$ of $(r,\rho)$ in $\ZZ_L\wr\Sym(n)$ satisfies $\pi^{3}=\rho$; a $\pi$-cycle of length $3\ell$ cubes to three $\rho$-cycles of length $\ell$, and the rotation sums along the three $\rho$-cycles must be equal (they are the three ways of reading the rotation sum along the $\pi$-cycle, using $\gcd(L,3)=1$ to divide by $3$); a $\rho$-cycle of length not divisible by $3$ can be a single $\pi$-cycle with $v$ solved for uniquely. Hence the $\rho$-cycles of length $\ell\equiv0\pmod 3$ must be grouped in triples of equal rotation sum, which is possible iff each (length, sum) class has size divisible by $3$; conversely such a grouping yields a cube root. (Verified against exhaustive enumeration of $\Cent(a)$ at $(L,n)=(2,5)$, $60/60$ trials, and $(2,6)$, $40/40$.)
+\end{proof}
+
+\begin{lem}[pairs of involutions]\label{lem:inv}
+If $a^{2}=c^{2}=1$ then $x=ac$ solves $x\,a\,x^{2}=c$.
+\end{lem}
+\begin{proof}
+$ac\cdot a\cdot ac\cdot ac=a\,(c\,a\,a\,c)\,a\,c=a\,a\,c=c$.
+\end{proof}
+A search over all words of length at most four in $a^{\pm1},c^{\pm1}$ found no other identical solution under any of the order conditions $a^{2}=1$, $c^{2}=1$, $a^{3}=1$, $a^{3}=c^{3}=1$, $a^{2}=1\wedge c^{3}=1$ (twelve random instances each at $N=9$). Restricting the order of $a$ alone does not make the problem easier for the solvers of Section~\ref{sec:cpwi}: on planted instances with generic $c$ the measured cost slopes are $1.12$, $1.44$ and $1.21$ bits per point of $N$ for $a$ generic, a fixed-point-free involution, and of order three respectively ($N=8,\ldots,20$).
+
+\subsection{Counting}\label{sec:stat}
+
+\begin{prop}[first-moment identity]\label{prop:moment}
+Fix $a\in\Sym(N)$ and a conjugacy class $\gamma$. Then
+\[
+ \sum_{c\in\gamma}\#\{x\in\Sym(N):\ x\,a\,x^{2}=c\}\;=\;\#\{x\in\Sym(N):\ \ctype(a\,x^{3})=\gamma\}.
+\]
+The right-hand side depends only on $\ctype(a)$ and $\gamma$ and is computable in polynomial time from the class algebra of $\Sym(N)$.
+\end{prop}
+\begin{proof}
+The map $x\mapsto xax^{2}$ sends $\Sym(N)$ onto the multiset of targets; by Lemma~\ref{lem:conj}, $xax^{2}\in\gamma$ iff $ax^{3}\in\gamma$. The count on the right is $\sum_{\lambda}\#\{x:\ctype(x^{3})=\lambda\}\cdot\Pr[\ctype(a\,u)=\gamma\mid u\in\lambda]$, a sum over cycle types of the number of cube roots per class times a connection coefficient of the class algebra, both polynomial-time computable. (Verified against exhaustive tables in all $121$, $225$ and $484$ blocks $(\ctype a,\gamma)$ at $N=6,7,8$.)
+\end{proof}
+
+The identity gives the average number of solutions over a block but not the solvability of an instance: inside a block the solution count behaves like a Poisson variable. In exhaustive tables over all pairs $(a,c)$ for $N=4,\ldots,9$, the fraction of solvable pairs is $0.583$, $0.708$, $0.610$, $0.587$, $0.591$, $0.591$, against $1-e^{-1}\approx0.632$ for a uniformly random map, and the probabilities of exactly one and exactly two solutions are $0.31$--$0.34$ and $0.16$--$0.19$ (Poisson: $0.368$ and $0.184$); planted instances have on average about two solutions, as a size-biased Poisson variable should. The same statistics hold for the structured instances of Section~\ref{sec:cpwi}. This is consistent with the equidistribution results for word maps with constants \cite{schneider2023,alekseev2025}.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{fig_statistics}
+\caption{Statistics of the solution count of $x\,a\,x^{2}=c$. (a) Fraction of pairs $(a,c)\in\Sym(N)^{2}$ with exactly $k$ solutions, from exhaustive tables for $N=6,7,8,9$ ($N!^{2}$ pairs each), against the Poisson(1) law; the excess at $k\ge4$ comes from structured pairs such as $a=c=1$. (b) Wreath instances at $m=5$, all $3600$ pairs $(A,B)$ and all $3600$ targets each: random targets follow Poisson(1), planted targets $c=x_0ax_0^{2}$ follow the size-biased law $k\,e^{-1}/k!$ with mean $2$.}
+\label{fig:stat}
+\end{figure}
+
+\subsection{No short-word invariant decides solvability}
+
+Since conjugacy is decided by a cycle type, one may ask whether solvability of $\Pthree$ is decided by cycle types of short words in $a$ and $c$, or by the orbit structure of $\langle a,c\rangle$.
+
+\begin{obs}\label{obs:inv}
+No function of $\ctype(c)$, $\ctype(ac)$, $\ctype(a^{-1}c)$, the cycle types of all words of length at most four in $a^{\pm1},c^{\pm1}$, and the orbit sizes of $\langle a,c\rangle$ decides whether $x\,a\,x^{2}=c$ is solvable, already for $N=6$. Witness: $a=(0\,1\,2\,3\,4\,5)$, $c_1=(0\,5)(1\,3)$ has no solution and $c_2=(0\,5)(2\,4)$ has one, while all listed invariants coincide (both $\langle a,c_i\rangle$ are transitive). For $N=7,8,9$ these invariants decide solvability for no $a$ except the identity and a transposition.
+\end{obs}
+The tautological complete invariant -- the simultaneous-conjugacy class of the pair $(a,c)$ -- has size $N!$ in general, and all the coarsenings we tested fail. We also checked that the families ``$a$ an $N$-cycle'', ``$a$ with pairwise distinct cycle lengths'' and ``$a$ with pairwise coprime cycle lengths'' are not easier: their solvable fractions and solver costs are those of random $a$ up to $N=20$, and for an $N$-cycle the two-step scheme ``choose $b\sim a$, then a cube root of $b^{-1}c$'' enumerates exactly $N\cdot(N-1)!=N!$ candidates.
+
+\section{Conjugacy by an element of order three is NP-complete}\label{sec:hard}
+
+\begin{defi}[\textsc{Order-3 Conjugacy}, $\Dzero$]
+\emph{Input:} $a,c\in\Sym(N)$. \emph{Question:} is there $x\in\Sym(N)$ with $x^{3}=1$ and $x\,a\,x^{-1}=c$?
+\end{defi}
+Since $x^{2}=x^{-1}$ when $x^{3}=1$, $\Dzero$ is the restriction of $\Pthree$ to solutions of order dividing $3$; equivalently, it asks whether the coset $g\Cent(a)$ of all conjugators of $a$ to $c$ contains an element of order dividing $3$.
+
+\begin{thm}\label{thm:main}
+$\Dzero$ is NP-complete. Hardness holds already when $a$ consists of $k$ disjoint cycles of one prime length $L\equiv2\pmod3$, when $c\in\Cent(a)$, and when the certificate is required to have cycle type $3^{N/3}$.
+\end{thm}
+
+\subsection{Conjugators between blockwise translations}
+
+Fix a prime $L\ge5$ and $k\ge1$, put $N=kL$, and identify the block $B_i=\{iL,\ldots,iL+L-1\}$ with $\ZZ_L$ via $iL+z\mapsto z$. Let $a$ act on every block as $z\mapsto z+1$. For units $m_1,\ldots,m_k\in\ZZ_L^{\times}$ let $c=c(m)$ act on $B_i$ as $z\mapsto z+m_i$; thus $c|_{B_i}=a^{m_i}|_{B_i}$, $c\in\Cent(a)$, and every block is a cycle of $c$.
+
+\begin{lem}[block lemma]\label{lem:block}
+$x\,a\,x^{-1}=c(m)$ if and only if there are $\sigma\in\Sym(k)$ and $t_1,\ldots,t_k\in\ZZ_L$ such that $x$ maps $B_i$ onto $B_{\sigma(i)}$ by the affine map $x(z)=m_{\sigma(i)}z+t_i$.
+\end{lem}
+\begin{proof}
+A conjugator maps cycles of $a$ onto cycles of $c$ of the same length, i.e.\ blocks onto blocks, and satisfies $x(a(p))=c(x(p))$, which on $B_i$ with $x(B_i)=B_{\sigma(i)}$ reads $x(z+1)=x(z)+m_{\sigma(i)}$. Its solutions are exactly the affine maps displayed, and each such family conjugates $a$ to $c(m)$.
+\end{proof}
+
+\begin{lem}[affine criterion]\label{lem:affine}
+$\Dzero(a,c(m))$ has a solution iff there is $\sigma\in\Sym(k)$ with $\sigma^{3}=1$ such that (i) $m_im_jm_l\equiv1\pmod L$ for every $3$-cycle $(i\,j\,l)$ of $\sigma$ and (ii) $m_i^{3}\equiv1\pmod L$ for every fixed point $i$ of $\sigma$. If all $m_i\neq1$ and $L\equiv2\pmod3$, (ii) is never satisfiable and every solution has cycle type $3^{N/3}$.
+\end{lem}
+\begin{proof}
+By Lemma~\ref{lem:block}, $x$ permutes the blocks via $\sigma$, so $x^{3}=1$ forces $\sigma^{3}=1$. On a $3$-cycle $i\mapsto j\mapsto l\mapsto i$, $x^{3}|_{B_i}$ is a composite of three affine maps with slopes $m_j,m_l,m_i$; it is the identity iff the slope product is $1$ and the translation part vanishes, and the translation part is an affine expression in $(t_i,t_j,t_l)$ in which $t_l$ has coefficient $1$, so it can always be made zero. On a fixed block, $x|_{B_i}(z)=m_iz+t_i$ and $x^{3}(z)=m_i^{3}z+(1+m_i+m_i^{2})t_i$; if $m_i=1$ take $t_i=0$ (as $L\neq3$); if $m_i\neq1$ and $m_i^{3}=1$ then $1+m_i+m_i^{2}=0$ and any $t_i$ works; if $m_i^{3}\neq1$ nothing works. For $L\equiv2\pmod3$, $\ZZ_L^{\times}$ has order $L-1\not\equiv0\pmod3$ and no element of order $3$, so $m_i^{3}=1$ forces $m_i=1$.
+\end{proof}
+Writing $m_i=g^{e_i}$ for a generator $g$ of $\ZZ_L^{\times}$, condition (i) reads $e_i+e_j+e_l\equiv0\pmod{L-1}$: on this family $\Dzero$ is a zero-sum triple-partition problem in $\ZZ_{L-1}$. (Lemma~\ref{lem:affine} was verified against exhaustive enumeration of all $L^{k}k!$ conjugators on $160$ random instances with $(L,k)\in\{(5,3),(7,3),(5,4),(11,3)\}$, and on $2832$ further instances up to $N=33$.)
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{fig_reduction}
+\caption{The reduction of Theorem~\ref{thm:main}. Each element $u\in W\cup X\cup Y$ of the N3DM instance becomes a block $B_u\cong\ZZ_L$ on which $a$ is the translation by $1$ and $c$ the translation by $m_u=g^{e_u}$. A conjugator of order three permutes the blocks by $\sigma$ with $\sigma^{3}=1$ and acts on each block by an affine map $z\mapsto m_{\sigma(u)}z+t_u$ (Lemma~\ref{lem:block}); a $\sigma$-triple has $x^{3}=1$ iff the product of its three slopes is $1$, i.e.\ iff its exponents sum to $0$ modulo $T=L-1$, which the choice of exponents makes equivalent to the matching condition $s(w)+s(x)+s(y)=B$ (Lemma~\ref{lem:affine} and the case analysis in the proof).}
+\label{fig:red}
+\end{figure}
+
+\subsection{The reduction}
+
+\textsc{Numerical 3-Dimensional Matching} (N3DM): given disjoint sets $W,X,Y$ of $q$ elements, sizes $s(u)\in\{1,\ldots,B\}$ and the bound $B$, decide whether $W\cup X\cup Y$ can be partitioned into $q$ triples, each with one element of $W$, of $X$ and of $Y$, with $s(w)+s(x)+s(y)=B$ in every triple. N3DM is strongly NP-complete \cite[SP16]{garey1979}, so $B$ may be assumed given in unary.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Membership in NP is clear. Given an N3DM instance, put $M=3B$ and let $L$ be the least prime with $L\equiv2\pmod3$ and $T:=L-1>12B$; by the prime number theorem in arithmetic progressions $L=O(B)$, and for $B\le10^{4}$ one checks directly that $L\le2(12B+2)$; it is found by trial division in polynomial time. Put $k=3q$, $N=kL$, and define exponents in $\ZZ_T$
+\begin{align*}
+ e_w&=s(w) &(w\in W),\\
+ e_x&=s(x)+M &(x\in X),\\
+ e_y&=s(y)+T-M-B &(y\in Y),
+\end{align*}
+$m_u=g^{e_u}$, and $(a,c)=(a,c(m))$ with one block per element $u$. The construction is polynomial in $q+B$.
+
+No exponent is $0$: $e_w\in[1,B]$, $e_x\in[M+1,M+B]$ with $M+B<T$, and $e_y\in[T-M-B+1,T-M]$. Hence all $m_u\neq1$ and, by Lemma~\ref{lem:affine}, a solution of $\Dzero(a,c)$ is a partition of the blocks into triples with exponent sum $\equiv0\pmod T$, of cycle type $3^{N/3}$.
+
+Let a triple contain $\alpha,\beta,\gamma$ elements of $W,X,Y$ ($\alpha+\beta+\gamma=3$) with size sum $S\in[3,3B]$. Its exponent sum is $S+\beta M+\gamma(T-M-B)\equiv S+(\beta-\gamma)M-\gamma B\pmod T$. With $M=3B$ and $T>12B$:
+$(\alpha,\beta,\gamma)=(1,1,1)$ gives $S-B\in[3-B,2B]$, which is $\equiv0$ iff $S=B$;
+$\gamma=0$ gives $S+\beta M\in[3,12B]$, never $\equiv0$;
+$\gamma=1,\beta=0$ gives $S-M-B\in[3-4B,-1]$ and $\gamma=1,\beta=2$ gives $S+M-B\in[3B+3,5B]$, never $\equiv0$;
+$\gamma=2$ gives $S+(\beta-2)M-2B\in[3-8B,-2B]$, never $\equiv0$;
+$\gamma=3$ gives $S-3M-3B\in[3-12B,-9B]$, never $\equiv0$.
+So the admissible triples are exactly the matching triples, and $\Dzero(a,c)$ is solvable iff the N3DM instance is. Every certificate has cycle type $3^{N/3}$ and $c\in\Cent(a)$.
+\end{proof}
+The case analysis was verified exhaustively for $B\le40$ and three values of $T$, the reduction against brute force on $180$ random N3DM instances ($q\le3$), and, at $q=1$, against exhaustive enumeration of all conjugators on eleven instances with $N$ up to $267$.
+
+\subsection{Consequences for \texorpdfstring{$\Pthree$}{P3}}
+
+For a partition $\lambda$ of $N$ let $\Pthree^{\lambda}$ be $\Pthree$ restricted to solutions with $\ctype(x)=\lambda$.
+\begin{cor}\label{cor:lambda}
+$\Pthree^{\lambda}$ is NP-complete for $\lambda=3^{N/3}$; it is polynomial when all parts of $\lambda$ are at most $2$ (then $x^{2}=1$, so $x=ca^{-1}$ and one checks $\ctype(ca^{-1})=\lambda$), and in time $N^{O(s)}$ when $\lambda$ has at most $s$ parts larger than $1$.
+\end{cor}
+\begin{cor}\label{cor:noenum}
+Unless $\mathrm P=\mathrm{NP}$, no algorithm for $\Pthree$ can enumerate the $e^{O(\sqrt N)}$ cycle types of the unknown and decide each $\Pthree^{\lambda}$ in polynomial time; the cycle-type enumeration route does not yield a subexponential algorithm for $\Pthree$.
+\end{cor}
+Numerically, at $N=7,8,9$ exactly the types with all parts at most $2$ are decided by the invariants of Observation~\ref{obs:inv} for every $a$; every $\lambda$ with a part $\ge4$, or two parts $\ge3$, fails them already at $N=7$.
+
+\begin{rem}[what Theorem~\ref{thm:main} does not prove]\label{rem:notproved}
+On the hard family $\Pthree$ itself is trivially solvable: $x$ acting on every block as the translation by $(m_i-1)/3$ commutes with $a$ and satisfies $xax^{2}=ax^{3}=c$ (Lemma~\ref{lem:cent}). So the hardness of $\Dzero$ does not transfer to $\Pthree$ through this family, and ``rigid'' instances, all of whose solutions have order three, are rare: in an exhaustive census for $N\le8$ they are about $0.8\%$ of the solvable pairs, mostly with a unique solution. Any hardness proof for $\Pthree$ must use solutions that move the constant, $xax^{-1}\neq a$.
+\end{rem}
+
+\begin{rem}[relation to known results]
+Theorem~\ref{thm:main} belongs to the family of ``element of prescribed cycle type'' results: Lubiw \cite{lubiw1981} for fixed-point-free automorphisms of graphs, Cameron and Wu \cite{cameronwu2010} for permutation groups given by generators (already elementary abelian $2$-groups), Arvind \cite{arvind2013} for parameterised versions, and Lohrey and Rosowski \cite{lohreyrosowski2025} for groups generated by two commuting permutations and for cosets $\pi\langle\tau\rangle$ of cyclic groups. In all of these the group or coset is part of the input. In Theorem~\ref{thm:main} the coset is not: it is the set of all conjugators of one permutation to another, a coset of the centraliser $\Cent(a)\cong\ZZ_L\wr\Sym(k)$, determined implicitly by the pair $(a,c)$. The theorem is thus a statement about an equation with two constants rather than about a group given by generators; neither result implies the other.
+\end{rem}
+
+\section{Layered permutation walks and the equation}\label{sec:cpwi}
+
+\subsection{The round as a one-variable equation}
+
+The construction of \cite{filardo2026cpwi} keeps two registers $U,V\in\Alt(m)$ and, at round $i$ with input bit $b$, applies
+\begin{equation}\label{eq:round}
+ U'=U\,A\,V\,U,\qquad V'=V\,B\,U\,V,
+\end{equation}
+with public constants $A=A_{i,b}$, $B=B_{i,b}\in\Alt(m)$. The complete terminal state is published, so inverting $n$ rounds is $n$ sequential instances of the single-round system $\mathcal R(U',V';A,B)$ given by \eqref{eq:round} with unknowns $(U,V)$, plus a branch decision per round; a backward search whose round systems are solved completely returns exactly the preimages, and combined with forward evaluation of the first $n/2$ rounds it gives a meet-in-the-middle attack of cost $\tilde O(2^{n/2}\,\TR(m))$, where $\TR(m)$ is the cost of enumerating the solutions of one round system \cite{filardo2026cpwi}. Everything therefore rests on $\TR(m)$.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{fig_wreath}
+\caption{The wreath normal form (Theorem~\ref{thm:wreath}). Left: one round of the layered walk, with registers $U,V\in\Alt(m)$ and public constants $A,B$. Right: the same round as the single equation $x\,a\,x^{2}=c$ in $\Alt(m)\wr C_2\le\Sym(2m)$, where the base group acts blockwise and $\sigma$ swaps the two blocks. The unknown $x$ and the target $c$ lie in the coset $(\Alt(m)\times\Alt(m))\sigma$; the constant $a=(B,A)$ lies in the base group.}
+\label{fig:wreath}
+\end{figure}
+
+\begin{thm}[wreath normal form]\label{thm:wreath}
+Let $K=(\Alt(m)\times\Alt(m))\rtimes C_2=\Alt(m)\wr C_2\le\Sym(2m)$, where $(U,V)$ acts on $\{0,\ldots,m-1\}$ by $U$ and on $\{m,\ldots,2m-1\}$ by $V$, and $\sigma$ swaps the two blocks. Put $x=(U,V)\sigma$, $a=(B,A)$, $c=(U',V')\sigma$. Then $(U,V)$ solves $\mathcal R(U',V';A,B)$ iff $x\,a\,x^{2}=c$ in $K$, and every solution of this equation in $K$ is of the form $(U,V)\sigma$. The single-round system is thus $\Pthree$ in the subgroup $K$.
+\end{thm}
+\begin{proof}
+In $K$, $\sigma(P,Q)\sigma^{-1}=(Q,P)$. With $g=(U,V)$,
+\begin{align*}(g\sigma)\,a\,(g\sigma)(g\sigma)&=g\,(\sigma a\sigma^{-1})(\sigma g\sigma^{-1})\,g\,\sigma\\&=(U,V)(A,B)(V,U)(U,V)\sigma=(UAVU,\,VBUV)\sigma,\end{align*}
+which equals $c$ iff \eqref{eq:round} holds. Since $a$ is in the base group and $c$ in the non-trivial coset, $xax^{2}\in(\Alt(m)\times\Alt(m))\sigma$ forces $x$ into that coset.
+\end{proof}
+Verified exhaustively at $m=5$ (all $3600$ pairs $(U,V)$ for $21$ pairs $(A,B)$) and on $3000$ random instances at each of $m=6,7$. Three remarks. (i) The elimination of $V$ from \eqref{eq:round} gives a one-unknown equation with five occurrences of $U$ (three positive, two negative); the wreath form has three positive occurrences and one constant. (ii) The case $a=1$, i.e.\ $A=B=1$, is the cube root $x^{3}=c$ and is polynomial. (iii) The relaxation of $xax^{2}=c$ from $K$ to $\Sym(2m)$ is \emph{not} equivalent to the round system: on planted instances at $m=5$ it acquires solutions outside $\Sym(m)\wr C_2$, so any solver for the round must keep the block structure. By the conjugation normal form $(U,V)\mapsto(Ug,g^{-1}V)$, $(A,B)\mapsto(g^{-1}Ag,B)$, the difficulty of a round depends on $(A,B)$ only through their conjugacy classes; no degenerate choice ($A=B$, $A=B^{-1}$, commuting $A,B$, $A$ of order two, $U'=V'$) was found to reduce the round to roots or conjugacy except $A=B=1$ (exhaustive at $m=5$).
+
+\subsection{The cost of constraint propagation}
+
+The natural solver works on the pointwise form $c(j)=x(a(x(x(j))))$: for every point $j$ the chain $j\to x(j)\to x^{2}(j)\to a x^{2}(j)\to c(j)$ contains three applications of $x$, and a chain forces its missing letter as soon as the other two are known. The solver propagates to a fixed point after every assignment and branches on an undetermined image; its cost is counted in search nodes, a machine-independent unit. Two branching rules were measured: the first free point, and the point with the fewest surviving images under one step of propagation (``most constrained first''). Instances are planted, $x$ uniform in the coset, $(A,B)$ uniform in $\Alt(m)^{2}$, five instances per degree, seeds derived by SHA-256 from labelled strings.
+
+\begin{obs}[cost law]\label{obs:cost}
+On $m=5,\ldots,16$ (Figure~\ref{fig:cost}b) the planted solution is reached after $k(m)\approx0.38\,m+0.6$ free decisions, each with a domain of about $m$ values, after which propagation completes the assignment; the first decision never propagates, the cascade occurs at decision $3$--$7$, wrong branches are refuted at the same depth as the right one, and $90$--$95\%$ of the nodes hang below the wrong children of the root. A random-coverage model (reveal $k$ images, propagate) reproduces the tree size within $30\%$. Hence $\log_2(\text{nodes})\approx(0.38\,m+0.6)\log_2(0.7\,m)+O(1)$: the cost is $|\Alt(m)|^{\Theta(1)}$ with exponent about one fifth of brute force, and any linear fit in bits per unit of degree is its tangent in the measured window.
+\end{obs}
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{fig_cost_law}
+\caption{Cost of the propagation solver on planted wreath instances, five instances per degree. (a) $\log_2$ of the median number of search nodes to the first solution for the two branching rules, with the linear and the $\alpha\,m\log_2 m$ fits of Table~\ref{tab:cost}; the two models coincide on the measured window and diverge at the originally proposed degree $m=36$. (b) Number $k(m)$ of free decisions before propagation completes the planted solution, for three branching rules (small dots: individual instances; large dots: means; dashed: $0.38\,m+0.6$). Each free decision has a domain of about $m$ values, which gives the $m\log m$ exponent.}
+\label{fig:cost}
+\end{figure}
+
+The mechanism is the peeling threshold of the constraint hypergraph: $N$ chains, $N$ unknown images, three letters per chain; a cascade requires a seed of linear size, since a single known image never completes two letters of any chain.
+
+\begin{table}[htbp]\centering
+\caption{Fitted cost of the propagation solver on wreath instances, $\log_2$ of the median number of search nodes to the first solution, five planted instances per degree, fitted on the degree window given under each rule. Both models fit the window equally; they diverge beyond it, so extrapolations are reported as intervals. All entries are $\log_2$ values; the last column is the combined attack cost $2^{n/2}\TR(m)$ at $(n,m)=(256,36)$.}\label{tab:cost}
+\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llrccc@{}}\toprule
+Branching rule & Model & Fit & $\TR(36)$ & $\TR(48)$ & attack\\\midrule
+first free point & linear & $1.85\,m-7.53$ & $59$ & $81$ & $187$\\
+ ($m=8$--$15$) & $m\log m$ & $0.374\,m\log_2 m-1.52$ & $68$ & $99$ & $196$\\[2pt]
+most constrained first & linear & $1.14\,m-4.10$ & $37$ & $51$ & $165$\\
+ ($m=8$--$18$) & $m\log m$ & $0.223\,m\log_2 m-0.13$ & $41$ & $60$ & $169$\\
+\bottomrule\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth]{fig_variants}
+\caption{Solver variants on planted wreath instances, $\log_2$ of the median number of search nodes to the first solution ($5$--$9$ instances per degree). The branching rule changes the slope of the cost curve (first free point against most constrained first); adding the cycle-type test $\ctype(ax^{3})=\ctype(c)$ to propagation changes nothing, since the test is implied by the local constraints. The coupled $(U,V)$ solver of the original construction and the wreath-form solver with the same branching rule coincide. The SMT encoding (one-hot SAT, right axis, seconds on one machine) has the same exponent.}
+\label{fig:var}
+\end{figure}
+
+Table~\ref{tab:cost} and Figures~\ref{fig:cost}a and~\ref{fig:var} give the two fits and the variant comparison. The most-constrained rule lowers the coefficient of the $m\log m$ law from $0.37$ to $0.22$, not merely a constant: $15$--$55$ times fewer nodes at $m=13$--$16$. A cycle-type relaxation of $\ctype(ax^{3})=\ctype(c)$ never pruned a node (it is implied by the local constraints); a one-hot SAT encoding solved by a modern SMT solver has the same exponent and is $10$--$20$ times slower in wall time; the conjugated form $x^{3}=a^{-1}y$, $y\sim c$, reduces to enumerating the class of $c$ and is not competitive. Generic instances in $\Sym(N)$ without block structure cost the same as wreath instances ($1.20$ against $1.23$ bits per point of $N$, $N=14$--$22$): the difficulty is that of $\Pthree$, not of the subgroup.
+
+Read at the parameters originally proposed, $(n,m)=(256,36)$, the attack costs between $2^{165}$ and $2^{196}$ depending on the branching rule and the cost model -- far below the $2^{256}$ of exhaustive search, far above the $2^{128}$ target. The parameters are not broken; but the whole margin is the factor $2^{n/2}$, which a meet-in-the-middle attack makes necessary rather than surplus, and a better round solver raises the degree a sizing rule must require (from $m=70$ with the first-free-point fit to $m=89$--$116$ with the most-constrained fits at a $128$-bit target). Only a lower bound for $\Pthree$ would let it fall back to the capacity value $m=36$.
+
+\section{Open problems}\label{sec:open}
+\begin{enumerate}
+\item Is $\Pthree$ -- the equation $x\,a\,x^{2}=c$ over $\Sym(N)$ -- NP-complete, or in P, or neither? Theorem~\ref{thm:main} and Remark~\ref{rem:notproved} show that a hardness proof must use solutions moving the constant; Lemma~\ref{lem:cent} shows that the commuting solutions are polynomial.
+\item Is $\Pthree^{\lambda}$ NP-complete for every $\lambda$ of unbounded support, in particular for $\lambda=(N)$?
+\item Is there a polynomial-time algorithm for $\Pthree$ when $a$ is an $N$-cycle, or has pairwise distinct cycle lengths?
+\item Is the $|\Alt(m)|^{\Theta(1)}$ cost of Observation~\ref{obs:cost} a lower bound for all local-propagation solvers, via the peeling threshold?
+\item Do the mixed-sign words of $x$-length three, such as $x\,a\,x\,b\,x^{-1}=c$, reduce to $\Pthree$, to conjugacy, or to something else?
+\end{enumerate}
+
+\section*{Reproducibility} The exhaustive and randomised checks cited above were produced by Python scripts (standard library; numpy for the exhaustive tables) that are archived, with their recorded outputs, in the repository \url{https://github.com/gautierfilardo-efrei/order3-conjugacy} (release \texttt{v0.1.0}); the round solver and cost records of Section~\ref{sec:cpwi} are released with \cite{filardo2026cpwi} (release \texttt{v1.3.0}). Timings are local; all reported costs are search-node counts.
+
+\section*{Acknowledgements} Generative AI tools assisted with code development and text drafting; the mathematics, sources and interpretation were reviewed by the author.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{p3_refs}
+\end{document}

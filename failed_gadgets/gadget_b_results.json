@@ -1,0 +1,3777 @@
+{
+ "summary": {
+  "gadget": "B1: block e = c-cycle of length L+1 with one a-chord (g0, g_Delta), label d_e = L - Delta_e in Z_L; n=3 blocks",
+  "grids": [
+   {
+    "L": 2,
+    "n": 3,
+    "N": 9,
+    "instances": 8,
+    "all_complete": true,
+    "family_always_present_and_verified": true,
+    "gadget_pass_count": 0,
+    "passing_labels": [],
+    "unintended_shapes": {
+     "[[], [], [1, 2]]": 8
+    },
+    "unintended_with_fixed_point_in_every_block": 0,
+    "cross_block_b_transpositions_in_unintended": true
+   },
+   {
+    "L": 3,
+    "n": 3,
+    "N": 12,
+    "instances": 27,
+    "all_complete": true,
+    "family_always_present_and_verified": true,
+    "gadget_pass_count": 14,
+    "passing_labels": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      2,
+      2
+     ],
+     [
+      1,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      2
+     ],
+     [
+      2,
+      1,
+      1
+     ],
+     [
+      2,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "unintended_shapes": {
+     "[[2, 2], [2, 2], [2, 2]]": 13
+    },
+    "unintended_with_fixed_point_in_every_block": 0,
+    "cross_block_b_transpositions_in_unintended": false
+   },
+   {
+    "L": 4,
+    "n": 3,
+    "N": 15,
+    "instances": 64,
+    "all_complete": true,
+    "family_always_present_and_verified": true,
+    "gadget_pass_count": 8,
+    "passing_labels": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      3
+     ],
+     [
+      0,
+      3,
+      0
+     ],
+     [
+      0,
+      3,
+      3
+     ],
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      3
+     ],
+     [
+      3,
+      3,
+      0
+     ],
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "unintended_shapes": {
+     "[[2, 3], [2, 3], [2, 3]]": 56
+    },
+    "unintended_with_fixed_point_in_every_block": 0,
+    "cross_block_b_transpositions_in_unintended": false
+   }
+  ],
+  "incomplete_probe": {
+   "L": 4,
+   "labels": [
+    0,
+    0,
+    0,
+    3,
+    3,
+    3
+   ],
+   "N": 30,
+   "node_budget": 3000000,
+   "complete": false,
+   "solutions_found": 24,
+   "family_size": 360,
+   "note": "enumeration NOT complete; counts provisional"
+  },
+  "method": "N<=9: enumeration of S_N; N=12,15: propagation solver word_solver.solve_word with max_solutions=1e7, exhausted=False checked"
+ },
+ "instances": [
+  {
+   "L": 2,
+   "labels": [
+    0,
+    0,
+    0
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 0,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 0.995,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    0,
+    0,
+    1
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 2,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 0.998,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    0,
+    1,
+    0
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 2,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.01,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    0,
+    1,
+    1
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 0,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.01,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    1,
+    0,
+    0
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 2,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.01,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    1,
+    0,
+    1
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 0,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.012,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    1,
+    1,
+    0
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 0,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.001,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 2,
+   "labels": [
+    1,
+    1,
+    1
+   ],
+   "N": 9,
+   "n_solutions": 12,
+   "n_family_oriented": 9,
+   "n_family_unflipped": 3,
+   "unintended": 3,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "brute",
+   "nodes": null,
+   "time_s": 1.008,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": true,
+     "t_parts_per_block": [
+      [],
+      [],
+      [
+       1,
+       2
+      ]
+     ],
+     "count": 3
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    0,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2291,
+   "time_s": 0.061,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    0,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2302,
+   "time_s": 0.061,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    0,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2291,
+   "time_s": 0.06,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    1,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2439,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    1,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2424,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    1,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2439,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    2,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2843,
+   "time_s": 0.07,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    2,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2884,
+   "time_s": 0.072,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    0,
+    2,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2843,
+   "time_s": 0.071,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    0,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2396,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    0,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2359,
+   "time_s": 0.062,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    0,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2396,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    1,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2522,
+   "time_s": 0.066,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    1,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 33,
+   "n_family_oriented": 0,
+   "n_family_unflipped": 0,
+   "unintended": 33,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2507,
+   "time_s": 0.065,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 33
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    1,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2521,
+   "time_s": 0.066,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    2,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2951,
+   "time_s": 0.074,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    2,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2936,
+   "time_s": 0.073,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    1,
+    2,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2951,
+   "time_s": 0.073,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    0,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2282,
+   "time_s": 0.061,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    0,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2287,
+   "time_s": 0.06,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    0,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2282,
+   "time_s": 0.061,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    1,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2424,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    1,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 8,
+   "n_family_oriented": 8,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2403,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    1,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2424,
+   "time_s": 0.063,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    2,
+    0
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2834,
+   "time_s": 0.07,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    2,
+    1
+   ],
+   "N": 12,
+   "n_solutions": 12,
+   "n_family_oriented": 4,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2869,
+   "time_s": 0.071,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       2,
+       2
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 3,
+   "labels": [
+    2,
+    2,
+    2
+   ],
+   "N": 12,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 2834,
+   "time_s": 0.07,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    0,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42399,
+   "time_s": 1.629,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    0,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42379,
+   "time_s": 1.639,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    0,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42379,
+   "time_s": 1.635,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    0,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42399,
+   "time_s": 1.62,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    1,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44714,
+   "time_s": 1.698,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    1,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44626,
+   "time_s": 1.694,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    1,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44626,
+   "time_s": 1.7,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    1,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44714,
+   "time_s": 1.703,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    2,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50160,
+   "time_s": 1.876,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    2,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50038,
+   "time_s": 1.857,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    2,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50038,
+   "time_s": 1.863,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    2,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50160,
+   "time_s": 1.868,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    3,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61701,
+   "time_s": 2.252,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    3,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62017,
+   "time_s": 2.287,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    3,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62017,
+   "time_s": 2.263,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    0,
+    3,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61701,
+   "time_s": 2.265,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    0,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 43008,
+   "time_s": 1.702,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    0,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42792,
+   "time_s": 1.678,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    0,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42792,
+   "time_s": 1.675,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    0,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 43008,
+   "time_s": 1.677,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    1,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 45277,
+   "time_s": 1.761,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    1,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 3,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44973,
+   "time_s": 1.755,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    1,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44973,
+   "time_s": 1.756,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    1,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 45278,
+   "time_s": 1.754,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    2,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50756,
+   "time_s": 1.919,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    2,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50390,
+   "time_s": 1.916,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    2,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50390,
+   "time_s": 1.918,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    2,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50757,
+   "time_s": 1.919,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    3,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62379,
+   "time_s": 2.334,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    3,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62419,
+   "time_s": 2.338,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    3,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62419,
+   "time_s": 2.344,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    1,
+    3,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62379,
+   "time_s": 2.317,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    0,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 43010,
+   "time_s": 1.691,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    0,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42794,
+   "time_s": 1.712,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    0,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42794,
+   "time_s": 1.676,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    0,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 43010,
+   "time_s": 1.685,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    1,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 45279,
+   "time_s": 1.765,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    1,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44981,
+   "time_s": 1.761,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    1,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44981,
+   "time_s": 1.747,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    1,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 45280,
+   "time_s": 1.769,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    2,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50758,
+   "time_s": 1.968,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    2,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50398,
+   "time_s": 1.942,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    2,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 27,
+   "n_family_oriented": 3,
+   "n_family_unflipped": 0,
+   "unintended": 24,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50398,
+   "time_s": 1.944,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 24
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    2,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50759,
+   "time_s": 1.978,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    3,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62381,
+   "time_s": 2.376,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    3,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62421,
+   "time_s": 2.387,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    3,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62421,
+   "time_s": 2.38,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    2,
+    3,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 62381,
+   "time_s": 2.353,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    0,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42434,
+   "time_s": 1.701,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    0,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42361,
+   "time_s": 1.696,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    0,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42361,
+   "time_s": 1.702,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    0,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 42434,
+   "time_s": 1.682,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    1,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44696,
+   "time_s": 1.759,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    1,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44545,
+   "time_s": 1.766,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    1,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44545,
+   "time_s": 1.776,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    1,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 44696,
+   "time_s": 1.761,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    2,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50142,
+   "time_s": 1.929,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    2,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 49957,
+   "time_s": 1.952,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    2,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 14,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 49957,
+   "time_s": 1.975,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    2,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 50142,
+   "time_s": 1.929,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    3,
+    0
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61736,
+   "time_s": 2.362,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    3,
+    1
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 2,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61999,
+   "time_s": 2.359,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    3,
+    2
+   ],
+   "N": 15,
+   "n_solutions": 10,
+   "n_family_oriented": 2,
+   "n_family_unflipped": 0,
+   "unintended": 8,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61999,
+   "time_s": 2.327,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [
+    {
+     "cross_block_b": false,
+     "t_parts_per_block": [
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "count": 8
+    }
+   ],
+   "family_pass": true,
+   "gadget_pass": false
+  },
+  {
+   "L": 4,
+   "labels": [
+    3,
+    3,
+    3
+   ],
+   "N": 15,
+   "n_solutions": 6,
+   "n_family_oriented": 6,
+   "n_family_unflipped": 0,
+   "unintended": 0,
+   "missing_predicted": 0,
+   "complete": true,
+   "method": "propagation",
+   "nodes": 61736,
+   "time_s": 2.325,
+   "unintended_with_fixed_point_in_every_block": 0,
+   "unintended_shapes": [],
+   "family_pass": true,
+   "gadget_pass": true
+  }
+ ]
+}

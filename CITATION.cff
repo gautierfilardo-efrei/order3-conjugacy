@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "Please cite the exact release or commit used."
+type: software
+title: "Order-3 conjugacy and one-variable equations of length three over symmetric groups"
+version: 0.2.0
+date-released: 2026-09-30
+repository-code: "https://github.com/gautierfilardo-efrei/order3-conjugacy"
+url: "https://github.com/gautierfilardo-efrei/order3-conjugacy"
+authors:
+  - family-names: Filardo
+    given-names: Gautier-Edouard
+    orcid: "https://orcid.org/0009-0005-8310-2065"
+    affiliation: "Efrei Research Lab, Efrei Paris Panthéon-Assas"
+license: MIT
+abstract: >-
+  Verification scripts, exhaustive tables and solver studies for the equation
+  x a x^2 = c over symmetric groups, including the reduction proving that
+  conjugacy by an element of order three is NP-complete.
+keywords:
+  - permutation groups
+  - equations in groups
+  - NP-completeness
+  - cycle types
+  - computational group theory
+preferred-citation:
+  type: article
+  title: "One-variable equations of length three over symmetric groups: normal forms, the hardness of order-three conjugacy, and layered permutation walks"
+  authors:
+    - family-names: Filardo
+      given-names: Gautier-Edouard
+      orcid: "https://orcid.org/0009-0005-8310-2065"
+  year: 2026
+  notes: "Manuscript submitted to the Journal of Symbolic Computation; update with volume, pages and DOI on acceptance."
