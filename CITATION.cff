@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+doi : 10.5281/zenodo.23124576
 message: "Please cite the exact release or commit used."
 type: software
 title: "Order-3 conjugacy and one-variable equations of length three over symmetric groups"
