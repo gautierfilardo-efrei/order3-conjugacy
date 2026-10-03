@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+paper/*.pdf
+!paper/p3_article_compiled.pdf
+figures/*.png
+!figures/fig_*.png
