@@ -1,0 +1,414 @@
+{
+ "seed": 20261007,
+ "quick": false,
+ "started": "2026-10-07 12:46:21",
+ "cent_exhaustive": {
+  "instances": 49906,
+  "classes": 66,
+  "mismatch": 0,
+  "solvable": 27746,
+  "max_count": 1233,
+  "sym_crosscheck": 1248,
+  "sym_mismatch": 0,
+  "per_N": {
+   "1": {
+    "classes": 1,
+    "instances": 1,
+    "seconds": 0.0
+   },
+   "2": {
+    "classes": 2,
+    "instances": 4,
+    "seconds": 0.0
+   },
+   "3": {
+    "classes": 3,
+    "instances": 11,
+    "seconds": 0.0
+   },
+   "4": {
+    "classes": 5,
+    "instances": 43,
+    "seconds": 0.0
+   },
+   "5": {
+    "classes": 7,
+    "instances": 161,
+    "seconds": 0.01
+   },
+   "6": {
+    "classes": 11,
+    "instances": 901,
+    "seconds": 0.05
+   },
+   "7": {
+    "classes": 15,
+    "instances": 5579,
+    "seconds": 0.7
+   },
+   "8": {
+    "classes": 22,
+    "instances": 43206,
+    "seconds": 1.45
+   }
+  }
+ },
+ "cent_blocks_3_divides_L": [
+  {
+   "L": 3,
+   "m": 1,
+   "N": 3,
+   "centraliser_size": 3,
+   "cubes_in_centraliser": 1,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 3,
+   "m": 2,
+   "N": 6,
+   "centraliser_size": 18,
+   "cubes_in_centraliser": 4,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 3,
+   "m": 3,
+   "N": 9,
+   "centraliser_size": 162,
+   "cubes_in_centraliser": 12,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 3,
+   "m": 4,
+   "N": 12,
+   "centraliser_size": 1944,
+   "cubes_in_centraliser": 216,
+   "mismatch": 0,
+   "seconds": 0.06
+  },
+  {
+   "L": 6,
+   "m": 1,
+   "N": 6,
+   "centraliser_size": 6,
+   "cubes_in_centraliser": 2,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 6,
+   "m": 2,
+   "N": 12,
+   "centraliser_size": 72,
+   "cubes_in_centraliser": 16,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 6,
+   "m": 3,
+   "N": 18,
+   "centraliser_size": 1296,
+   "cubes_in_centraliser": 84,
+   "mismatch": 0,
+   "seconds": 0.04
+  },
+  {
+   "L": 9,
+   "m": 1,
+   "N": 9,
+   "centraliser_size": 9,
+   "cubes_in_centraliser": 3,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 9,
+   "m": 2,
+   "N": 18,
+   "centraliser_size": 162,
+   "cubes_in_centraliser": 36,
+   "mismatch": 0,
+   "seconds": 0.0
+  },
+  {
+   "L": 9,
+   "m": 3,
+   "N": 27,
+   "centraliser_size": 4374,
+   "cubes_in_centraliser": 276,
+   "mismatch": 0,
+   "seconds": 0.17
+  },
+  {
+   "L": 3,
+   "m": 5,
+   "N": 15,
+   "centraliser_size": 29160,
+   "cubes_in_centraliser": 3000,
+   "mismatch": 0,
+   "seconds": 0.93
+  },
+  {
+   "L": 12,
+   "m": 2,
+   "N": 24,
+   "centraliser_size": 288,
+   "cubes_in_centraliser": 64,
+   "mismatch": 0,
+   "seconds": 0.01
+  },
+  {
+   "L": 6,
+   "m": 4,
+   "N": 24,
+   "centraliser_size": 31104,
+   "cubes_in_centraliser": 3360,
+   "mismatch": 0,
+   "seconds": 1.13
+  },
+  {
+   "L": 3,
+   "m": 6,
+   "N": 18,
+   "centraliser_size": 524880,
+   "cubes_in_centraliser": 23472,
+   "mismatch": 0,
+   "seconds": 19.39
+  }
+ ],
+ "prescribed_cube_roots": {
+  "trials": 396,
+  "mismatch": 0,
+  "nonzero": 117,
+  "examples": []
+ },
+ "support": {
+  "exhaustive": [
+   {
+    "N": 5,
+    "s": 2,
+    "num_a": 10,
+    "instances": 1200,
+    "solvable": 920,
+    "mismatch": 0,
+    "seconds": 0.2
+   },
+   {
+    "N": 5,
+    "s": 3,
+    "num_a": 20,
+    "instances": 2400,
+    "solvable": 1600,
+    "mismatch": 0,
+    "seconds": 0.9
+   },
+   {
+    "N": 5,
+    "s": 4,
+    "num_a": 45,
+    "instances": 5400,
+    "solvable": 3840,
+    "mismatch": 0,
+    "seconds": 4.0
+   },
+   {
+    "N": 6,
+    "s": 2,
+    "num_a": 15,
+    "instances": 10800,
+    "solvable": 5760,
+    "mismatch": 0,
+    "seconds": 3.2
+   },
+   {
+    "N": 6,
+    "s": 3,
+    "num_a": 40,
+    "instances": 28800,
+    "solvable": 15520,
+    "mismatch": 0,
+    "seconds": 23.0
+   },
+   {
+    "N": 6,
+    "s": 4,
+    "num_a": 135,
+    "instances": 97200,
+    "solvable": 57600,
+    "mismatch": 0,
+    "seconds": 280.1
+   }
+  ],
+  "random": [
+   {
+    "N": 7,
+    "s": 2,
+    "instances": 40,
+    "solvable": 33,
+    "mismatch": 0,
+    "seconds": 0.1
+   },
+   {
+    "N": 7,
+    "s": 3,
+    "instances": 40,
+    "solvable": 27,
+    "mismatch": 0,
+    "seconds": 0.1
+   },
+   {
+    "N": 7,
+    "s": 4,
+    "instances": 40,
+    "solvable": 31,
+    "mismatch": 0,
+    "seconds": 0.4
+   },
+   {
+    "N": 8,
+    "s": 2,
+    "instances": 30,
+    "solvable": 23,
+    "mismatch": 0,
+    "seconds": 0.3
+   },
+   {
+    "N": 8,
+    "s": 3,
+    "instances": 30,
+    "solvable": 20,
+    "mismatch": 0,
+    "seconds": 0.4
+   },
+   {
+    "N": 8,
+    "s": 4,
+    "instances": 30,
+    "solvable": 24,
+    "mismatch": 0,
+    "seconds": 0.8
+   },
+   {
+    "N": 9,
+    "s": 2,
+    "instances": 12,
+    "solvable": 8,
+    "mismatch": 0,
+    "seconds": 1.4
+   },
+   {
+    "N": 9,
+    "s": 3,
+    "instances": 12,
+    "solvable": 7,
+    "mismatch": 0,
+    "seconds": 1.1
+   },
+   {
+    "N": 9,
+    "s": 4,
+    "instances": 12,
+    "solvable": 7,
+    "mismatch": 0,
+    "seconds": 1.5
+   }
+  ],
+  "mismatch": 0,
+  "instances": 146046
+ },
+ "total_seconds": 341.9,
+ "support_extra": {
+  "exhaustive": [
+   {
+    "N": 7,
+    "s": 2,
+    "num_a": 21,
+    "instances": 105840,
+    "solvable": 60480,
+    "mismatch": 0,
+    "seconds": 152.7
+   }
+  ],
+  "random": [
+   {
+    "N": 7,
+    "s": 2,
+    "instances": 300,
+    "solvable": 235,
+    "mismatch": 0,
+    "seconds": 0.5
+   },
+   {
+    "N": 7,
+    "s": 3,
+    "instances": 300,
+    "solvable": 203,
+    "mismatch": 0,
+    "seconds": 0.9
+   },
+   {
+    "N": 7,
+    "s": 4,
+    "instances": 300,
+    "solvable": 242,
+    "mismatch": 0,
+    "seconds": 2.6
+   },
+   {
+    "N": 8,
+    "s": 2,
+    "instances": 300,
+    "solvable": 232,
+    "mismatch": 0,
+    "seconds": 2.9
+   },
+   {
+    "N": 8,
+    "s": 3,
+    "instances": 300,
+    "solvable": 223,
+    "mismatch": 0,
+    "seconds": 3.7
+   },
+   {
+    "N": 8,
+    "s": 4,
+    "instances": 300,
+    "solvable": 242,
+    "mismatch": 0,
+    "seconds": 7.0
+   },
+   {
+    "N": 9,
+    "s": 2,
+    "instances": 150,
+    "solvable": 111,
+    "mismatch": 0,
+    "seconds": 14.0
+   },
+   {
+    "N": 9,
+    "s": 3,
+    "instances": 150,
+    "solvable": 106,
+    "mismatch": 0,
+    "seconds": 13.2
+   },
+   {
+    "N": 9,
+    "s": 4,
+    "instances": 150,
+    "solvable": 121,
+    "mismatch": 0,
+    "seconds": 16.2
+   }
+  ],
+  "mismatch": 0,
+  "instances": 108090
+ }
+}

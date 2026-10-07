@@ -1,0 +1,7 @@
+Highlights (Elsevier: 3-5 bullets, <= 85 characters each, including spaces)
+
+- Conjugacy by an element of order n in Sym(N) is NP-complete for every n >= 3
+- Conjugacy by an involution is decided in O(N^3) time by pairing orbits of <a,c>
+- A Gassmann pair in Sym(7) shows no word invariant decides x a x^2 = c
+- Closed-form first moment of the solution count via cube roots and class algebra
+- The round of a layered permutation walk is exactly x a x^2 = c in Alt(m) wr C_2

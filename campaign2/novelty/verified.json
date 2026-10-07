@@ -1,0 +1,357 @@
+{
+ "10.1007/978-3-031-52113-3_27": {
+  "doi": "10.1007/978-3-031-52113-3_27",
+  "title": "Complexity of\u00a0Spherical Equations in\u00a0Finite Groups",
+  "authors": [
+   "Mattes, Caroline",
+   "Ushakov, Alexander",
+   "Wei\u00df, Armin"
+  ],
+  "year": 2024,
+  "venue": "Lecture Notes in Computer Science",
+  "volume": null,
+  "issue": null,
+  "pages": "383-397",
+  "publisher": "Springer Nature Switzerland",
+  "type": "book-chapter"
+ },
+ "10.1017/s0013091524000579": {
+  "doi": "10.1017/s0013091524000579",
+  "title": "Gassmann triples with special cycle types and applications",
+  "authors": [
+   "Kammeyer, Holger",
+   "Kionke, Steffen"
+  ],
+  "year": 2024,
+  "venue": "Proceedings of the Edinburgh Mathematical Society",
+  "volume": "67",
+  "issue": "4",
+  "pages": "1115-1124",
+  "publisher": "Cambridge University Press (CUP)",
+  "type": "journal-article"
+ },
+ "10.1070/sm1981v040n03abeh001824": {
+  "doi": "10.1070/sm1981v040n03abeh001824",
+  "title": "ON THE NUMBER OF SOLUTIONS OF THE EQUATION $x^k = a$ IN THE SYMMETRIC GROUP $S_n$",
+  "authors": [
+   "Pavlov, A I"
+  ],
+  "year": 1981,
+  "venue": "Mathematics of the USSR-Sbornik",
+  "volume": "40",
+  "issue": "3",
+  "pages": "349-362",
+  "publisher": "Steklov Mathematical Institute",
+  "type": "journal-article"
+ },
+ "10.1070/sm1983v045n02abeh002597": {
+  "doi": "10.1070/sm1983v045n02abeh002597",
+  "title": "ON THE LIMIT DISTRIBUTION OF THE NUMBER OF SOLUTIONS OF THE EQUATION $ x^k = a$ IN THE SYMMETRIC GROUP $ S_n$",
+  "authors": [
+   "Pavlov, A I"
+  ],
+  "year": 1983,
+  "venue": "Mathematics of the USSR-Sbornik",
+  "volume": "45",
+  "issue": "2",
+  "pages": "243-255",
+  "publisher": "Steklov Mathematical Institute",
+  "type": "journal-article"
+ },
+ "10.1007/pl00001300": {
+  "doi": "10.1007/pl00001300",
+  "title": "p-Divisibility of the Number of Solutions of xp = 1 in a Symmetric Group",
+  "authors": [
+   "Ishihara, Hideki",
+   "Ochiai, Hiroyuki",
+   "Takegahara, Yugen",
+   "Yoshida, Tomoyuki"
+  ],
+  "year": 2001,
+  "venue": "Annals of Combinatorics",
+  "volume": "5",
+  "issue": "2",
+  "pages": "197-210",
+  "publisher": "Springer Science and Business Media LLC",
+  "type": "journal-article"
+ },
+ "10.1016/0012-365x(94)90152-x": {
+  "doi": "10.1016/0012-365x(94)90152-x",
+  "title": "Permutations with pl-th roots",
+  "authors": [
+   "Chernoff, William W."
+  ],
+  "year": 1994,
+  "venue": "Discrete Mathematics",
+  "volume": "125",
+  "issue": "1-3",
+  "pages": "123-127",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1016/0012-365x(90)90054-l": {
+  "doi": "10.1016/0012-365x(90)90054-l",
+  "title": "On products of conjugacy classes of the symmetric group",
+  "authors": [
+   "Goupil, Alain"
+  ],
+  "year": 1990,
+  "venue": "Discrete Mathematics",
+  "volume": "79",
+  "issue": "1",
+  "pages": "49-57",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.4153/cmb-1992-022-9": {
+  "doi": "10.4153/cmb-1992-022-9",
+  "title": "The Poset of Conjugacy Classes and Decomposition of Products in the Symmetric Group",
+  "authors": [
+   "B\u00e9dard, Fran\u00e7ois",
+   "Goupil, Alain"
+  ],
+  "year": 1992,
+  "venue": "Canadian Mathematical Bulletin",
+  "volume": "35",
+  "issue": "2",
+  "pages": "152-160",
+  "publisher": "Canadian Mathematical Society",
+  "type": "journal-article"
+ },
+ "10.1515/jgt.2010.036": {
+  "doi": "10.1515/jgt.2010.036",
+  "title": "Strongly real elements of orthogonal groups in even characteristic",
+  "authors": [
+   "R\u00e4m\u00f6, Johanna"
+  ],
+  "year": 2011,
+  "venue": "Journal of Group Theory",
+  "volume": "14",
+  "issue": "1",
+  "pages": null,
+  "publisher": "Walter de Gruyter GmbH",
+  "type": "journal-article"
+ },
+ "10.1090/s0025-5718-99-01157-6": {
+  "doi": "10.1090/s0025-5718-99-01157-6",
+  "title": "Conjugacy classes in finite permutation groups via homomorphic images",
+  "authors": [
+   "Hulpke, Alexander"
+  ],
+  "year": 1999,
+  "venue": "Mathematics of Computation",
+  "volume": "69",
+  "issue": "232",
+  "pages": "1633-1651",
+  "publisher": "American Mathematical Society (AMS)",
+  "type": "journal-article"
+ },
+ "10.1016/j.jsc.2023.102287": {
+  "doi": "10.1016/j.jsc.2023.102287",
+  "title": "Fast computation of the centralizer of a permutation group in the symmetric group",
+  "authors": [
+   "Po\u017ear, Rok"
+  ],
+  "year": 2024,
+  "venue": "Journal of Symbolic Computation",
+  "volume": "123",
+  "issue": null,
+  "pages": "102287",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1016/j.jsc.2017.12.003": {
+  "doi": "10.1016/j.jsc.2017.12.003",
+  "title": "New refiners for permutation group search",
+  "authors": [
+   "Jefferson, Christopher",
+   "Pfeiffer, Markus",
+   "Waldecker, Rebecca"
+  ],
+  "year": 2019,
+  "venue": "Journal of Symbolic Computation",
+  "volume": "92",
+  "issue": null,
+  "pages": "70-92",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1016/j.jsc.2022.04.007": {
+  "doi": "10.1016/j.jsc.2022.04.007",
+  "title": "Perfect refiners for permutation group backtracking algorithms",
+  "authors": [
+   "Jefferson, Christopher",
+   "Waldecker, Rebecca",
+   "Wilson, Wilf A."
+  ],
+  "year": 2023,
+  "venue": "Journal of Symbolic Computation",
+  "volume": "114",
+  "issue": null,
+  "pages": "18-36",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1016/j.jsc.2021.04.003": {
+  "doi": "10.1016/j.jsc.2021.04.003",
+  "title": "Disjoint direct product decompositions of permutation groups",
+  "authors": [
+   "Chang, Mun See",
+   "Jefferson, Christopher"
+  ],
+  "year": 2022,
+  "venue": "Journal of Symbolic Computation",
+  "volume": "108",
+  "issue": null,
+  "pages": "1-16",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.2307/1971195": {
+  "doi": "10.2307/1971195",
+  "title": "Riemannian Coverings and Isospectral Manifolds",
+  "authors": [
+   "Sunada, Toshikazu"
+  ],
+  "year": 1985,
+  "venue": "The Annals of Mathematics",
+  "volume": "121",
+  "issue": "1",
+  "pages": "169",
+  "publisher": "JSTOR",
+  "type": "journal-article"
+ },
+ "10.1006/inco.2002.3173": {
+  "doi": "10.1006/inco.2002.3173",
+  "title": "The Complexity of Solving Equations over Finite Groups",
+  "authors": [
+   "Goldmann, Mikael",
+   "Russell, Alexander"
+  ],
+  "year": 2002,
+  "venue": "Information and Computation",
+  "volume": "178",
+  "issue": "1",
+  "pages": "253-262",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.46298/jgcc.2024.16.1.13555": {
+  "doi": "10.46298/jgcc.2024.16.1.13555",
+  "title": "Constrained inhomogeneous spherical equations: average-case hardness",
+  "authors": [
+   "Ushakov, Alexander"
+  ],
+  "year": 2024,
+  "venue": "journal of Groups, complexity, cryptology",
+  "volume": "Volume 16, Issue 1, Special...",
+  "issue": null,
+  "pages": null,
+  "publisher": "Centre pour la Communication Scientifique Directe (CCSD)",
+  "type": "journal-article"
+ },
+ "10.1016/j.jalgebra.2006.03.015": {
+  "doi": "10.1016/j.jalgebra.2006.03.015",
+  "title": "Permutation characters and fixed-point-free elements in permutation groups",
+  "authors": [
+   "Spiga, Pablo"
+  ],
+  "year": 2006,
+  "venue": "Journal of Algebra",
+  "volume": "299",
+  "issue": "1",
+  "pages": "1-7",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1016/0022-314x(77)90070-1": {
+  "doi": "10.1016/0022-314x(77)90070-1",
+  "title": "On the equation \u03b6k(s) = \u03b6k\u2032(s)",
+  "authors": [
+   "Perlis, Robert"
+  ],
+  "year": 1977,
+  "venue": "Journal of Number Theory",
+  "volume": "9",
+  "issue": "3",
+  "pages": "342-360",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.4153/cjm-1955-021-8": {
+  "doi": "10.4153/cjm-1955-021-8",
+  "title": "On Solutions of x<sup>d</sup> = 1 In Symmetric Groups",
+  "authors": [
+   "Moser, Leo"
+  ],
+  "year": 1955,
+  "venue": "Canadian Journal of Mathematics",
+  "volume": "7",
+  "issue": null,
+  "pages": "159-168",
+  "publisher": "Canadian Mathematical Society",
+  "type": "journal-article"
+ },
+ "10.4153/cjm-1951-038-3": {
+  "doi": "10.4153/cjm-1951-038-3",
+  "title": "On Recursions Connected With Symmetric Groups I",
+  "authors": [
+   "Chowla, S.",
+   "Herstein, I. N.",
+   "Moore, W. K."
+  ],
+  "year": 1951,
+  "venue": "Canadian Journal of Mathematics",
+  "volume": "3",
+  "issue": null,
+  "pages": "328-334",
+  "publisher": "Canadian Mathematical Society",
+  "type": "journal-article"
+ },
+ "10.1515/jgth.2005.8.3.291": {
+  "doi": "10.1515/jgth.2005.8.3.291",
+  "title": "Real conjugacy classes in algebraic groups and finite groups of Lie type",
+  "authors": [
+   "Tiep, Pham Huu",
+   "Zalesski, A. E."
+  ],
+  "year": 2005,
+  "venue": "Journal of Group Theory",
+  "volume": "8",
+  "issue": "3",
+  "pages": null,
+  "publisher": "Walter de Gruyter GmbH",
+  "type": "journal-article"
+ },
+ "10.1016/j.jalgebra.2025.03.011": {
+  "doi": "10.1016/j.jalgebra.2025.03.011",
+  "title": "Membership problems in finite groups",
+  "authors": [
+   "Lohrey, Markus",
+   "Rosowski, Andreas",
+   "Zetzsche, Georg"
+  ],
+  "year": 2025,
+  "venue": "Journal of Algebra",
+  "volume": "675",
+  "issue": null,
+  "pages": "23-58",
+  "publisher": "Elsevier BV",
+  "type": "journal-article"
+ },
+ "10.1145/3698106": {
+  "doi": "10.1145/3698106",
+  "title": "Solving Promise Equations over Monoids and Groups",
+  "authors": [
+   "Larrauri, Alberto",
+   "\u017divn\u00fd, Stanislav"
+  ],
+  "year": 2024,
+  "venue": "ACM Transactions on Computational Logic",
+  "volume": "26",
+  "issue": "1",
+  "pages": "1-24",
+  "publisher": "Association for Computing Machinery (ACM)",
+  "type": "journal-article"
+ }
+}

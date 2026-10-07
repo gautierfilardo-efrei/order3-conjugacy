@@ -1,0 +1,25 @@
+Anticipated referee objections and prepared answers
+
+1. "The headline problem (P3) is left open."  -- Yes, stated in the abstract and Section 6. The paper classifies the
+   restricted problem for every order n, proves that no word/orbit/group invariant decides P3 (Gassmann pair), reduces P3
+   to an exact question (one equation vs. the two-equation system) and proves that the natural paddings fail. These are the
+   results; the open problem is located, not hidden.
+2. "Is the Conj_n theorem new?"  -- Literature search (Crossref/arXiv, 2026-10-07; novelty_report.md): nothing on conjugators of
+   prescribed order. Closest: Mattes-Ushakov-Weiss (LATIN 2024) on spherical equations over S_n with n in the input;
+   Lohrey-Rosowski-Zetzsche (J. Algebra 2025) on membership in products of cyclic groups. Both have groups/cosets given by
+   generators or as products; ours is an implicit coset of a centraliser.
+3. "Conj_2 polynomial is trivial / known."  -- Only the case c = a^{-1} (strongly real elements) is classical; the general
+   problem with two arbitrary constants is not in the literature; the algorithm (orbit pairing with a parity condition) is
+   short but not immediate. Verified on 409,113 pairs with N <= 9 and by two independent scripts.
+4. "The PSL(2,7) example is just a Gassmann triple."  -- Acknowledged and cited (Perlis, Sunada, Kammeyer-Kionke). The novelty
+   is its use as an obstruction for equation solving, and the exhaustive solution counts (0 vs 1).
+5. "The first-moment identity is routine."  -- Said so in the text; it is included because it is used (fourlayer remark,
+   statistics) and we found no statement of it in the literature.
+6. "Section 5 is empirical and about an unpublished construction."  -- It is an application section; the theorem there
+   (wreath normal form) is exact, the cost law is reported as an interval over two models and two branching rules, and all
+   figures are regenerated from recorded data. We are willing to shorten it on request.
+7. "Verification by scripts is not proof."  -- Every theorem has a written proof; the scripts are exhaustive checks on small
+   degrees, cited with their instance counts, and are archived (release v0.4.0). Two lemmas that were sketches in an earlier
+   draft now have complete proofs (cube roots with prescribed images; cube roots in a centraliser).
+8. "Reduction exponential in n."  -- Polynomial for each fixed n, which is what the classification needs; the uniform question
+   is listed as open problem 5.

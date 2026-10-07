@@ -1,0 +1,2007 @@
+{
+ "construction": {
+  "L": 5,
+  "M": 4,
+  "e": [
+   1,
+   2,
+   3,
+   3
+  ],
+  "rho": "4-cycle r->r+1"
+ },
+ "k1": {
+  "(2,)": {
+   "N": 20,
+   "conj3_yes": false,
+   "n_solutions": 0,
+   "complete": true,
+   "nodes": 1998,
+   "ctypes": [],
+   "layer_affine": [],
+   "solutions": []
+  },
+  "(3,)": {
+   "N": 20,
+   "conj3_yes": false,
+   "n_solutions": 0,
+   "complete": true,
+   "nodes": 2050,
+   "ctypes": [],
+   "layer_affine": [],
+   "solutions": []
+  },
+  "(4,)": {
+   "N": 20,
+   "conj3_yes": false,
+   "n_solutions": 10,
+   "complete": true,
+   "nodes": 1994,
+   "ctypes": [
+    "(15, 3, 1, 1)"
+   ],
+   "layer_affine": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "solutions": [
+    [
+     0,
+     13,
+     1,
+     7,
+     10,
+     14,
+     9,
+     15,
+     5,
+     4,
+     8,
+     3,
+     17,
+     2,
+     18,
+     16,
+     6,
+     11,
+     12,
+     19
+    ],
+    [
+     0,
+     6,
+     14,
+     12,
+     3,
+     7,
+     9,
+     10,
+     2,
+     19,
+     1,
+     5,
+     4,
+     17,
+     18,
+     8,
+     16,
+     11,
+     13,
+     15
+    ],
+    [
+     4,
+     5,
+     13,
+     3,
+     11,
+     18,
+     8,
+     2,
+     12,
+     7,
+     15,
+     0,
+     16,
+     6,
+     1,
+     14,
+     10,
+     17,
+     19,
+     9
+    ],
+    [
+     4,
+     1,
+     7,
+     10,
+     13,
+     15,
+     8,
+     5,
+     11,
+     3,
+     19,
+     2,
+     6,
+     0,
+     18,
+     16,
+     9,
+     17,
+     12,
+     14
+    ],
+    [
+     5,
+     13,
+     11,
+     2,
+     4,
+     8,
+     14,
+     1,
+     18,
+     6,
+     9,
+     3,
+     16,
+     17,
+     0,
+     15,
+     10,
+     12,
+     19,
+     7
+    ],
+    [
+     9,
+     12,
+     2,
+     10,
+     3,
+     7,
+     1,
+     11,
+     6,
+     17,
+     4,
+     15,
+     5,
+     0,
+     19,
+     14,
+     16,
+     18,
+     8,
+     13
+    ],
+    [
+     11,
+     1,
+     14,
+     2,
+     8,
+     0,
+     10,
+     5,
+     16,
+     6,
+     19,
+     9,
+     4,
+     18,
+     3,
+     15,
+     17,
+     7,
+     12,
+     13
+    ],
+    [
+     12,
+     10,
+     1,
+     3,
+     9,
+     13,
+     0,
+     17,
+     5,
+     7,
+     2,
+     15,
+     16,
+     4,
+     8,
+     14,
+     11,
+     18,
+     6,
+     19
+    ],
+    [
+     12,
+     0,
+     6,
+     14,
+     4,
+     8,
+     19,
+     9,
+     3,
+     13,
+     2,
+     16,
+     1,
+     17,
+     7,
+     5,
+     10,
+     11,
+     18,
+     15
+    ],
+    [
+     14,
+     0,
+     2,
+     8,
+     11,
+     4,
+     16,
+     9,
+     6,
+     12,
+     19,
+     15,
+     3,
+     7,
+     1,
+     10,
+     17,
+     5,
+     18,
+     13
+    ]
+   ],
+   "note": "Conj_3 NO (brute force over S_5: 0 order-3 conjugators; affine criterion 4^3=64=4!=1 mod 5) but P3(a',c') YES: 10 solutions, all of cycle type (15,3,1,1), none layer-respecting; two orbits of size 5 under conjugation by the common centraliser <a^4 (x) id>. Cross-checked with word_solver (10 solutions, tree complete) and verify_campaign.comp."
+  },
+  "(1,)": {
+   "N": 20,
+   "conj3_yes": true,
+   "n_solutions": 5,
+   "complete": true,
+   "nodes": 1925,
+   "ctypes": [
+    "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+    "(5, 5, 5, 5)"
+   ],
+   "layer_affine": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "solutions": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19
+    ],
+    [
+     1,
+     2,
+     3,
+     4,
+     0,
+     8,
+     9,
+     5,
+     6,
+     7,
+     14,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     19,
+     15,
+     16
+    ],
+    [
+     2,
+     3,
+     4,
+     0,
+     1,
+     6,
+     7,
+     8,
+     9,
+     5,
+     13,
+     14,
+     10,
+     11,
+     12,
+     19,
+     15,
+     16,
+     17,
+     18
+    ],
+    [
+     3,
+     4,
+     0,
+     1,
+     2,
+     9,
+     5,
+     6,
+     7,
+     8,
+     12,
+     13,
+     14,
+     10,
+     11,
+     16,
+     17,
+     18,
+     19,
+     15
+    ],
+    [
+     4,
+     0,
+     1,
+     2,
+     3,
+     7,
+     8,
+     9,
+     5,
+     6,
+     11,
+     12,
+     13,
+     14,
+     10,
+     18,
+     19,
+     15,
+     16,
+     17
+    ]
+   ],
+   "note": "Conj_3 YES; 5 solutions = the lifts a^t (x) id, t=0..4 (all layer-affine, shift 0, slope 1); planted lift id found."
+  }
+ },
+ "solver_semantics": "P3Solver.solve returns (solutions, stats); stats['complete']=True iff the search tree was fully explored (then the list is exhaustive). word_solver.solve_word's st['exhausted']=True means the NODE BUDGET was exhausted (search NOT complete).",
+ "k1_witness_m4": {
+  "x": [
+   0,
+   13,
+   1,
+   7,
+   10,
+   14,
+   9,
+   15,
+   5,
+   4,
+   8,
+   3,
+   17,
+   2,
+   18,
+   16,
+   6,
+   11,
+   12,
+   19
+  ],
+  "a_prime": [
+   6,
+   7,
+   8,
+   9,
+   5,
+   12,
+   13,
+   14,
+   10,
+   11,
+   18,
+   19,
+   15,
+   16,
+   17,
+   3,
+   4,
+   0,
+   1,
+   2
+  ],
+  "c_prime": [
+   9,
+   5,
+   6,
+   7,
+   8,
+   13,
+   14,
+   10,
+   11,
+   12,
+   17,
+   18,
+   19,
+   15,
+   16,
+   2,
+   3,
+   4,
+   0,
+   1
+  ],
+  "encoding": "(j,r) -> r*5 + j",
+  "e": [
+   1,
+   2,
+   3,
+   3
+  ]
+ },
+ "unpadded_S5": {
+  "instance": "a=(0 1 2 3 4), c=a^-1",
+  "conj3_witnesses": 0,
+  "p3_solutions": 1,
+  "method": "brute force over S_5"
+ },
+ "k1_all_admissible_e": {
+  "admissible": 160,
+  "orbits": [
+   {
+    "e": [
+     1,
+     1,
+     1,
+     3
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 30,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(12, 3, 3, 2)",
+      "(18, 2)",
+      "(19, 1)",
+      "(5, 5, 3, 3, 1, 1, 1, 1)"
+     ],
+     "example": [
+      1,
+      8,
+      18,
+      16,
+      2,
+      6,
+      5,
+      12,
+      0,
+      19,
+      15,
+      14,
+      10,
+      17,
+      9,
+      3,
+      11,
+      7,
+      4,
+      13
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     1,
+     4
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 10,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(6, 5, 4, 3, 1, 1)",
+      "(7, 7, 3, 1, 1, 1)"
+     ],
+     "example": [
+      3,
+      0,
+      18,
+      1,
+      12,
+      6,
+      7,
+      9,
+      17,
+      5,
+      10,
+      11,
+      13,
+      14,
+      2,
+      16,
+      19,
+      15,
+      4,
+      8
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     2,
+     2
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(8, 7, 3, 2)"
+     ],
+     "example": [
+      2,
+      3,
+      1,
+      8,
+      13,
+      0,
+      17,
+      9,
+      14,
+      6,
+      4,
+      12,
+      11,
+      16,
+      5,
+      18,
+      7,
+      10,
+      19,
+      15
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     2,
+     4
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 10,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(15, 3, 1, 1)"
+     ],
+     "example": [
+      5,
+      17,
+      10,
+      12,
+      7,
+      3,
+      8,
+      0,
+      18,
+      9,
+      13,
+      11,
+      15,
+      2,
+      1,
+      6,
+      4,
+      16,
+      19,
+      14
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     3,
+     2
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 30,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(12, 4, 2, 2)",
+      "(7, 5, 4, 2, 1, 1)",
+      "(8, 7, 2, 1, 1, 1)",
+      "(9, 7, 1, 1, 1, 1)",
+      "(9, 7, 3, 1)"
+     ],
+     "example": [
+      0,
+      13,
+      3,
+      2,
+      1,
+      17,
+      9,
+      19,
+      6,
+      7,
+      12,
+      16,
+      4,
+      10,
+      18,
+      15,
+      8,
+      14,
+      5,
+      11
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     3,
+     4
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(5, 5, 5, 5)"
+     ],
+     "example": [
+      1,
+      3,
+      11,
+      14,
+      10,
+      17,
+      15,
+      18,
+      6,
+      7,
+      2,
+      13,
+      0,
+      4,
+      12,
+      5,
+      9,
+      8,
+      19,
+      16
+     ]
+    },
+    "m3": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(5, 5, 5, 5)"
+     ],
+     "example": [
+      2,
+      0,
+      13,
+      12,
+      11,
+      6,
+      18,
+      17,
+      9,
+      15,
+      3,
+      10,
+      4,
+      14,
+      1,
+      19,
+      8,
+      5,
+      7,
+      16
+     ]
+    },
+    "m4": {
+     "n": 40,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(17, 3)",
+      "(5, 4, 3, 3, 3, 2)",
+      "(5, 5, 3, 3, 1, 1, 1, 1)",
+      "(5, 5, 4, 2, 2, 2)",
+      "(6, 5, 4, 2, 2, 1)"
+     ],
+     "example": [
+      0,
+      4,
+      2,
+      1,
+      3,
+      7,
+      9,
+      8,
+      6,
+      5,
+      12,
+      10,
+      11,
+      13,
+      14,
+      18,
+      15,
+      16,
+      19,
+      17
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     1,
+     4,
+     3
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 20,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(14, 3, 2, 1)",
+      "(15, 3, 1, 1)",
+      "(16, 4)",
+      "(8, 7, 3, 2)"
+     ],
+     "example": [
+      2,
+      5,
+      11,
+      10,
+      13,
+      12,
+      19,
+      1,
+      17,
+      6,
+      18,
+      14,
+      4,
+      3,
+      0,
+      7,
+      8,
+      15,
+      9,
+      16
+     ]
+    },
+    "m3": {
+     "n": 20,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(14, 3, 2, 1)",
+      "(15, 3, 1, 1)",
+      "(16, 4)",
+      "(8, 7, 3, 2)"
+     ],
+     "example": [
+      3,
+      19,
+      18,
+      10,
+      5,
+      11,
+      0,
+      13,
+      17,
+      14,
+      12,
+      1,
+      2,
+      15,
+      9,
+      7,
+      6,
+      4,
+      16,
+      8
+     ]
+    },
+    "m4": {
+     "n": 15,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(5, 5, 3, 3, 1, 1, 1, 1)",
+      "(6, 5, 4, 2, 2, 1)",
+      "(7, 5, 3, 2, 2, 1)"
+     ],
+     "example": [
+      0,
+      2,
+      4,
+      3,
+      1,
+      5,
+      9,
+      6,
+      8,
+      7,
+      11,
+      14,
+      13,
+      10,
+      12,
+      19,
+      17,
+      15,
+      16,
+      18
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     2,
+     1,
+     3
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 35,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(10, 7, 2, 1)",
+      "(4, 4, 4, 4, 2, 2)",
+      "(7, 7, 3, 1, 1, 1)",
+      "(8, 5, 3, 2, 1, 1)",
+      "(9, 4, 3, 2, 1, 1)"
+     ],
+     "example": [
+      0,
+      4,
+      1,
+      10,
+      3,
+      6,
+      9,
+      18,
+      16,
+      5,
+      11,
+      13,
+      14,
+      12,
+      2,
+      17,
+      8,
+      7,
+      15,
+      19
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     2,
+     1,
+     4
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m3": {
+     "n": 0,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [],
+     "example": null
+    },
+    "m4": {
+     "n": 25,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(10, 3, 3, 2, 1, 1)",
+      "(5, 4, 4, 3, 3, 1)",
+      "(5, 5, 3, 3, 1, 1, 1, 1)"
+     ],
+     "example": [
+      0,
+      4,
+      14,
+      2,
+      10,
+      19,
+      9,
+      8,
+      15,
+      18,
+      1,
+      3,
+      16,
+      17,
+      11,
+      7,
+      5,
+      6,
+      13,
+      12
+     ]
+    }
+   },
+   {
+    "e": [
+     1,
+     2,
+     3,
+     2
+    ],
+    "orbit_size": 16,
+    "m2": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(9, 4, 3, 2, 1, 1)"
+     ],
+     "example": [
+      0,
+      10,
+      4,
+      2,
+      13,
+      5,
+      7,
+      19,
+      15,
+      18,
+      12,
+      1,
+      14,
+      11,
+      3,
+      8,
+      9,
+      16,
+      17,
+      6
+     ]
+    },
+    "m3": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(9, 4, 3, 2, 1, 1)"
+     ],
+     "example": [
+      0,
+      4,
+      1,
+      13,
+      12,
+      5,
+      8,
+      18,
+      17,
+      15,
+      3,
+      10,
+      11,
+      14,
+      2,
+      9,
+      19,
+      6,
+      16,
+      7
+     ]
+    },
+    "m4": {
+     "n": 5,
+     "complete": true,
+     "ctype_a": [
+      20
+     ],
+     "ctype_c": [
+      20
+     ],
+     "ctypes": [
+      "(5, 5, 3, 3, 1, 1, 1, 1)"
+     ],
+     "example": [
+      1,
+      2,
+      4,
+      0,
+      3,
+      5,
+      8,
+      7,
+      9,
+      6,
+      12,
+      14,
+      13,
+      11,
+      10,
+      16,
+      17,
+      15,
+      18,
+      19
+     ]
+    }
+   }
+  ],
+  "note": "160 admissible e in {1..4}^4 (sum e != 0, <v,e> != 0 mod 5, v=(1,2,4,3) left null vector of 2I+P_rho); 10 orbits under layer rotation x unit scaling (each of size 16; instances in one orbit are simultaneously conjugate). Every orbit has >=5 solutions at m=4; m=2,3 have 0 solutions for 7 orbits, 5 or 20 for 3 orbits. All runs complete (tree exhausted)."
+ },
+ "first_moment": {
+  "exact_mean_over_20cycles_k1": "12337775/11639628",
+  "exact_float": 1.0599801814972094,
+  "method": "first-moment identity sum_{c in gamma} #sol(a,c) = #{x: ctype(a x^3)=gamma} with gamma=(20); chi(20-cycle) nonzero only on hooks; hook characters via sum_i chi^{(n-i,1^i)}(sigma) t^i = prod_j (1-(-t)^{l_j})/(1+t); checked against brute force for N=4,5,6 (5/3, 17/12, 7/5).",
+  "monte_carlo": {
+   "k1": {
+    "N": 20,
+    "samples": 400000,
+    "hits": 21028,
+    "p_hat": 0.05257,
+    "mean_solutions_over_class": 1.0514000000000001,
+    "stderr_mean": 0.007057364600188939,
+    "time_s": 6.6
+   },
+   "k2": {
+    "N": 40,
+    "samples": 1500000,
+    "hits": 1933,
+    "p_hat": 0.0012886666666666667,
+    "mean_solutions_over_class": 1.0309333333333333,
+    "stderr_mean": 0.023433364292946197,
+    "time_s": 36.8
+   }
+  }
+ },
+ "k2_capped_runs": {
+  "note": "N=40, e=(1,2,3,3), time cap 1500 s each, 6 parallel processes; NONE complete (tree not exhausted, ~38-65k nodes). Counts are LOWER BOUNDS only; 0 means 'none found', not 'none exist'. For (4,4) the 100 product solutions are PROVED to exist (see k2_product_solutions) although the capped search did not reach them.",
+  "runs": {
+   "(1, 1)": {
+    "L": 5,
+    "m": [
+     1,
+     1
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 1,
+    "conj3_yes": true,
+    "n_solutions": 10,
+    "complete": false,
+    "nodes": 65012,
+    "time_s": 1500.0,
+    "all_verified": true,
+    "ctypes": [
+     "(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+     "(5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+     "(5, 5, 5, 5, 5, 5, 5, 5)"
+    ],
+    "planted_lifts_found": 1,
+    "layer_affine_count": 10,
+    "solutions": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+     ],
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      5,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18,
+      19,
+      15,
+      16,
+      17,
+      20,
+      21,
+      22,
+      23,
+      24,
+      29,
+      25,
+      26,
+      27,
+      28,
+      30,
+      31,
+      32,
+      33,
+      34,
+      37,
+      38,
+      39,
+      35,
+      36
+     ],
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      5,
+      6,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      15,
+      20,
+      21,
+      22,
+      23,
+      24,
+      28,
+      29,
+      25,
+      26,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      35,
+      36,
+      37,
+      38
+     ],
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14,
+      19,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      27,
+      28,
+      29,
+      25,
+      26,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      39,
+      35
+     ],
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      15,
+      16,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      29,
+      25,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      35,
+      36,
+      37
+     ],
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13,
+      14,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      24,
+      20,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      28,
+      29,
+      32,
+      33,
+      34,
+      30,
+      31,
+      35,
+      36,
+      37,
+      38,
+      39
+     ],
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      6,
+      7,
+      8,
+      9,
+      5,
+      13,
+      14,
+      10,
+      11,
+      12,
+      18,
+      19,
+      15,
+      16,
+      17,
+      24,
+      20,
+      21,
+      22,
+      23,
+      29,
+      25,
+      26,
+      27,
+      28,
+      32,
+      33,
+      34,
+      30,
+      31,
+      37,
+      38,
+      39,
+      35,
+      36
+     ],
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      7,
+      8,
+      9,
+      5,
+      6,
+      13,
+      14,
+      10,
+      11,
+      12,
+      16,
+      17,
+      18,
+      19,
+      15,
+      24,
+      20,
+      21,
+      22,
+      23,
+      28,
+      29,
+      25,
+      26,
+      27,
+      32,
+      33,
+      34,
+      30,
+      31,
+      39,
+      35,
+      36,
+      37,
+      38
+     ],
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      8,
+      9,
+      5,
+      6,
+      7,
+      13,
+      14,
+      10,
+      11,
+      12,
+      19,
+      15,
+      16,
+      17,
+      18,
+      24,
+      20,
+      21,
+      22,
+      23,
+      27,
+      28,
+      29,
+      25,
+      26,
+      32,
+      33,
+      34,
+      30,
+      31,
+      36,
+      37,
+      38,
+      39,
+      35
+     ],
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      9,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      10,
+      11,
+      12,
+      17,
+      18,
+      19,
+      15,
+      16,
+      24,
+      20,
+      21,
+      22,
+      23,
+      26,
+      27,
+      28,
+      29,
+      25,
+      32,
+      33,
+      34,
+      30,
+      31,
+      38,
+      39,
+      35,
+      36,
+      37
+     ]
+    ]
+   },
+   "(1, 2)": {
+    "L": 5,
+    "m": [
+     1,
+     2
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 0,
+    "conj3_yes": false,
+    "n_solutions": 0,
+    "complete": false,
+    "nodes": 50178,
+    "time_s": 1500.0,
+    "all_verified": true,
+    "ctypes": [],
+    "planted_lifts_found": 0,
+    "layer_affine_count": 0,
+    "solutions": []
+   },
+   "(2, 2)": {
+    "L": 5,
+    "m": [
+     2,
+     2
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 0,
+    "conj3_yes": false,
+    "n_solutions": 0,
+    "complete": false,
+    "nodes": 38047,
+    "time_s": 1500.1,
+    "all_verified": true,
+    "ctypes": [],
+    "planted_lifts_found": 0,
+    "layer_affine_count": 0,
+    "solutions": []
+   },
+   "(2, 3)": {
+    "L": 5,
+    "m": [
+     2,
+     3
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 0,
+    "conj3_yes": false,
+    "n_solutions": 0,
+    "complete": false,
+    "nodes": 38236,
+    "time_s": 1500.0,
+    "all_verified": true,
+    "ctypes": [],
+    "planted_lifts_found": 0,
+    "layer_affine_count": 0,
+    "solutions": []
+   },
+   "(4, 2)": {
+    "L": 5,
+    "m": [
+     4,
+     2
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 0,
+    "conj3_yes": false,
+    "n_solutions": 0,
+    "complete": false,
+    "nodes": 40265,
+    "time_s": 1500.0,
+    "all_verified": true,
+    "ctypes": [],
+    "planted_lifts_found": 0,
+    "layer_affine_count": 0,
+    "solutions": []
+   },
+   "(4, 4)": {
+    "L": 5,
+    "m": [
+     4,
+     4
+    ],
+    "e": [
+     1,
+     2,
+     3,
+     3
+    ],
+    "N": 40,
+    "ctype_a": [
+     20,
+     20
+    ],
+    "ctype_c": [
+     20,
+     20
+    ],
+    "conj3_witnesses": 0,
+    "conj3_yes": false,
+    "n_solutions": 0,
+    "complete": false,
+    "nodes": 38998,
+    "time_s": 1500.1,
+    "all_verified": true,
+    "ctypes": [],
+    "planted_lifts_found": 0,
+    "layer_affine_count": 0,
+    "solutions": []
+   }
+  }
+ },
+ "k2_product_solutions": {
+  "m": [
+   4,
+   4
+  ],
+  "N": 40,
+  "count_verified": 100,
+  "construction": "disjoint union of two k=1, m=4 solutions on the two blocks (a' and c' preserve each block x Z_4)",
+  "conj3_yes": false
+ },
+ "general_refutation": "For every k>=1 the instance a = k disjoint 5-cycles, c = a^{-1} on block 1 and c = a on the other blocks (or c = a^{-1} on every block) is Conj_3-NO by the affine criterion, while P3(a',c') is YES: take a k=1, m=4 spurious solution on block 1 x Z_4 and the identity (resp. another spurious solution) on the other blocks x Z_4; both a' and c' preserve each B_i x Z_4, so the disjoint union solves x a' x^2 = c'."
+}

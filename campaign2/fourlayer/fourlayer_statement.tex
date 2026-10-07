@@ -1,0 +1,49 @@
+% fourlayer_statement.tex -- statement + proof for the paper (negative result on the layered padding).
+% Conventions as in p3_article.tex: image tuples, products right to left, (pq)(j)=p(q(j)).
+% Uses the macros \Pthree, \Dzero (Conj_3), \ctype, \Sym, \ZZ of the main file.
+
+\begin{prop}[layered paddings do not reduce $\Dzero$ to $\Pthree$]\label{prop:fourlayer}
+Let $a$ be a product of $k\ge1$ disjoint $5$-cycles on $\Omega$ (blocks $B_1,\dots,B_k\cong\ZZ_5$, $a$ the translation by $1$),
+let $c=a^{-1}$ on $B_1$ and $c=a$ on $B_2,\dots,B_k$, and let $(a',c')$ be the four-layer padding on $\Omega\times\ZZ_4$,
+\[
+a'(j,r)=(a^{e_r}j,\;r+1),\qquad c'(j,r)=(c^{e_r}j,\;r+1),\qquad e=(1,2,3,3).
+\]
+Then $\Dzero(a,c)$ has no solution, whereas $x\,a'\,x^{2}=c'$ has at least $10$ solutions in $\Sym(\Omega\times\ZZ_4)$.
+The same holds for every exponent vector $e\in\{1,2,3,4\}^{4}$ with $\sum_r e_r\not\equiv0$ and $\langle v,e\rangle\not\equiv0\pmod 5$,
+$v=(1,2,4,3)$ (the $160$ vectors for which the blockwise-power ansatz of the padding is singular with the right-hand side outside its image).
+In particular the padded instance $(a',c')$ is a YES instance of $\Pthree$ for a NO instance of $\Dzero$, for every $k$.
+\end{prop}
+
+\begin{proof}
+\emph{$\Dzero(a,c)$ is NO.} By the block lemma (Lemma~\ref{lem:block}) a conjugator permutes the blocks by some $\sigma$ and acts on
+$B_i$ by $z\mapsto m_{\sigma(i)}z+t_i$ with $m_1=4=-1$ and $m_i=1$ for $i\ge2$. By the affine criterion (Lemma~\ref{lem:affine}) an
+order-$3$ conjugator needs $m_im_jm_l\equiv1$ on every $3$-cycle of $\sigma$ and $m_i^{3}\equiv1$ on every fixed block; the block $B_1$
+lies either on a $3$-cycle, where the product is $(-1)\cdot1\cdot1=-1\not\equiv1$, or is fixed, where $(-1)^{3}=-1\not\equiv1\pmod5$.
+(For $k=1$ this is the statement that every conjugator of a $5$-cycle to its inverse is a reflection $z\mapsto -z+t$, of order $\le2$.)
+
+\emph{$\Pthree(a',c')$ is YES.} Both $a'$ and $c'$ preserve every set $B_i\times\ZZ_4$, so a disjoint union of solutions on the
+$B_i\times\ZZ_4$ is a solution on $\Omega\times\ZZ_4$. On $B_i\times\ZZ_4$ with $i\ge2$ one has $c'=a'$ and $x=\mathrm{id}$ is a solution.
+On $B_1\times\ZZ_4$, where $c'(j,r)=(a^{-e_r}j,r+1)$, write $p=(j,r)\mapsto 5r+j\in\{0,\dots,19\}$; then
+\begin{align*}
+a'&=(6,7,8,9,5,\,12,13,14,10,11,\,18,19,15,16,17,\,3,4,0,1,2),\\
+c'&=(9,5,6,7,8,\,13,14,10,11,12,\,17,18,19,15,16,\,2,3,4,0,1),\\
+x &=(0,13,1,7,10,\,14,9,15,5,4,\,8,3,17,2,18,\,16,6,11,12,19),
+\end{align*}
+and a direct evaluation of $x(a'(x(x(p))))$ for the twenty points $p$ gives $c'$. This $x$ has cycle type $(15,3,1,1)$; its five conjugates
+under $\langle a^{4}\otimes\mathrm{id}\rangle$ (the common centraliser of $a'$ and $c'$, of order $5$) together with a second orbit of five form the complete
+solution set on $B_1\times\ZZ_4$ (exhaustive search, two independent solvers; see \texttt{fourlayer\_results.json}). None of the ten
+solutions respects the layers $B_1\times\{r\}$. For the other admissible exponent vectors the solution counts at $m=4$ are
+$5,5,10,10,15,25,30,30,35,40$ on the ten orbits under layer rotation and unit scaling (exhaustive, $N=20$).
+\end{proof}
+
+\begin{rem}[why no padding of this type can be expected to work]
+By the first-moment identity (Theorem~\ref{thm:firstmoment}) the average number of solutions of $x\,a'\,x^{2}=c'$ over all $20$-cycles
+$c'$, for $a'$ a fixed $20$-cycle, is
+\[
+\frac{1}{20!}\sum_{h\ \text{hook}}\frac{1}{\chi_h(1)}\sum_{x\in\Sym(20)}\chi_h(x^{3})=\frac{12337775}{11639628}\approx1.06,
+\]
+computed with the hook generating function $\sum_i\chi^{(n-i,1^i)}(\sigma)t^i=\prod_j(1-(-t)^{\ell_j})/(1+t)$ and the fact that the
+character of a $20$-cycle vanishes off the hooks (the formula was checked against brute force for $N=4,5,6$). A Monte-Carlo estimate
+gives $1.03\pm0.02$ for $a'$ of type $(20,20)$. The padded NO instances are thus not structurally solution-free: the counts $0,0$ observed
+for $m=2,3$ with $e=(1,2,3,3)$ are of the size predicted for a random target, and they become $5$ or $20$ for other admissible $e$.
+\end{rem}

@@ -1,0 +1,1 @@
+{"L": 5, "m": [4, 2], "e": [1, 2, 3, 3], "N": 40, "ctype_a": [20, 20], "ctype_c": [20, 20], "conj3_witnesses": 0, "conj3_yes": false, "n_solutions": 0, "complete": false, "nodes": 40265, "time_s": 1500.0, "all_verified": true, "ctypes": [], "planted_lifts_found": 0, "layer_affine_count": 0, "solutions": []}

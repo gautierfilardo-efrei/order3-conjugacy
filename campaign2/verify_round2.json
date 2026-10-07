@@ -1,0 +1,51 @@
+{
+ "cuberoots": {
+  "classes": 44,
+  "agree": 44
+ },
+ "cent": {
+  "pairs": 6699,
+  "agree": 6699,
+  "positive": 3779
+ },
+ "cent_equation": {
+  "checks": 200,
+  "agree": 200
+ },
+ "lemmaA": {
+  "instances": 392,
+  "agree": 392,
+  "positives": 250
+ },
+ "propE_N5_u2": [
+  4
+ ],
+ "propE_N7_u3": [
+  6
+ ],
+ "fourlayer": {
+  "a_prime_matches": true,
+  "c_prime_matches": true,
+  "witness_solves": true,
+  "witness_ctype": [
+   15,
+   3,
+   1,
+   1
+  ],
+  "conj3_no": true,
+  "unpadded_P3_count": 1
+ },
+ "rigid_census_N5_6": {
+  "5": {
+   "solvable_pairs": 10200,
+   "rigid": 720,
+   "fraction": 0.07058823529411765
+  },
+  "6": {
+   "solvable_pairs": 316080,
+   "rigid": 19440,
+   "fraction": 0.06150341685649203
+  }
+ }
+}

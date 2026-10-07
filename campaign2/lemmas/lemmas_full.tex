@@ -1,0 +1,114 @@
+% lemmas_full.tex -- replacement text for lem:support and lem:cent of p3_article.tex (v7).
+% Uses the paper's macros: \Sym \ctype \Cent \supp \Pthree \ZZ and the environments lem/prop/proof.
+% Conventions as in the paper: image tuples, products right to left, (pq)(j)=p(q(j)).
+% Verified by lemmas_track.py (see lemmas_results.json): 49906 pairs (a,c) with c in C(a), all cycle types, N<=8;
+% blockwise families with 3|L up to |C(a)|=524880; 254136 instances of the support algorithm vs brute force; 0 mismatches.
+
+% ---------------------------------------------------------------- preliminaries on cube roots
+\begin{lem}[cube roots of a permutation]\label{lem:cuberoots}
+Let $t\in\Sym(N)$. A permutation $x$ with $x^{3}=t$ permutes the cycles of $t$, and the $x$-orbits of cycles have size $1$ or $3$. The cube roots of $t$ are in bijection with the following data:
+a partition of the set of cycles of $t$ into \emph{singletons}, which must have length $\ell\not\equiv0\pmod 3$, and \emph{triples} of cycles of a common length $\ell$ (any $\ell$);
+on a singleton $D$ of length $\ell$ one has $x|_{D}=t^{k}|_{D}$ with $3k\equiv1\pmod\ell$ (one choice);
+on a triple $\{D_1,D_2,D_3\}$ the restriction of $x$ is one of exactly $2\ell^{2}$ permutations of $D_1\cup D_2\cup D_3$, namely those obtained by choosing a cyclic order $D_{1}\to D_{i}\to D_{j}\to D_{1}$ ($2$ choices), the image $x(p_1)\in D_i$ of a fixed base point $p_1\in D_1$ ($\ell$ choices) and the image $x(x(p_1))\in D_j$ ($\ell$ choices), and extending by $x(t^{u}q)=t^{u}x(q)$ and $x^{3}=t$.
+Consequently, if $t$ has $n_\ell$ cycles of length $\ell$, the number of cube roots of $t$ is
+\begin{equation}\label{eq:cuberootcount}
+\prod_{\ell\ge1}\ \sum_{k=0}^{\lfloor n_\ell/3\rfloor}\frac{n_\ell!}{k!\,6^{k}\,(n_\ell-3k)!}\,(2\ell^{2})^{k}\,\sigma_\ell^{\,n_\ell-3k},
+\qquad \sigma_\ell=\begin{cases}1&3\nmid\ell,\\0&3\mid\ell,\end{cases}
+\end{equation}
+with the convention $0^{0}=1$; in particular $t$ has a cube root iff $3\mid n_\ell$ for every $\ell\equiv0\pmod 3$.
+\end{lem}
+\begin{proof}
+Since $x$ commutes with $t=x^{3}$, it maps $t$-cycles onto $t$-cycles of the same length; the induced permutation $\bar x$ of the cycles satisfies $\bar x^{3}=\bar t=\mathrm{id}$, so its orbits have size $1$ or $3$.
+If $D$ is a fixed cycle of $\bar x$ then $x|_D$ commutes with the $\ell$-cycle $t|_D$ and lies in its centraliser $\langle t|_D\rangle$ (a transitive cyclic group is self-centralising), so $x|_D=t^{k}|_D$ with $t^{3k}=t$ on $D$, i.e.\ $3k\equiv1\pmod\ell$: this has a (unique) solution iff $3\nmid\ell$.
+If $\{D_1,D_2,D_3\}$ is an orbit of size $3$, say $x(D_1)=D_i$, $x(D_i)=D_j$, the three cycles have the same length $\ell$ and $x$ is determined on $D_1$ by $x(p_1)$ (because $x(t^{u}p_1)=t^{u}x(p_1)$), on $D_i$ by $x(x(p_1))$, and on $D_j$ by $x^{3}=t$, i.e.\ $x(x^{2}(t^{u}p_1))=t^{u+1}p_1$; conversely every such choice defines a bijection of $D_1\cup D_i\cup D_j$ which commutes with $t$ on each of the three cycles by construction, and whose cube is $t$: it is $t$ on $D_1$ by construction, and since $x^{3}$ commutes with $x$, $x^{3}(x(q))=x(x^{3}(q))=x(t(q))=t(x(q))$ for $q\in D_1$, so $x^{3}=t$ on $x(D_1)$ and likewise on $x^{2}(D_1)$. This gives $2\cdot\ell\cdot\ell$ roots per triple, independent of the ordering of the triple.
+The count~\eqref{eq:cuberootcount} follows: $n!/(k!\,6^{k}(n-3k)!)$ is the number of ways to choose $k$ disjoint unordered triples among $n$ labelled cycles.
+\end{proof}
+
+% ---------------------------------------------------------------- lem:support (full proof)
+\begin{lem}[cube roots with prescribed images]\label{lem:prescribed}
+Given $t\in\Sym(N)$ and a partial injection $f\colon S\to[N]$, the number of $x\in\Sym(N)$ with $x^{3}=t$ and $x|_{S}=f$ is computed in time $O(N)$ after the cycle decomposition of $t$ (in particular, existence is decided in polynomial time).
+\end{lem}
+\begin{proof}
+Let $D(q)$ denote the $t$-cycle of a point $q$ and $\ell(D)$ the length of a cycle $D$. We encode the constraints as a directed graph $\Gamma$ on the cycles of $t$: for each $p\in S$ put an edge $D(p)\to D(f(p))$ labelled by the \emph{phase} $d\in\ZZ_{\ell}$ defined by $f(p)=t^{d}(q_{0})$ where $q_0$ is a fixed base point of $D(f(p))$ and $p=t^{u}(p_0)$ with $p_0$ the base point of $D(p)$; precisely $d=\mathrm{pos}(f(p))-\mathrm{pos}(p)\bmod\ell$, so that $x|_{D(p)}$ is forced to be $t^{u}p_0\mapsto t^{u+d}q_0$. By Lemma~\ref{lem:cuberoots} a root $x$ with $x|_S=f$ exists only if:
+\begin{enumerate}
+\item[(i)] $\ell(D(p))=\ell(D(f(p)))$ for all $p\in S$ ($x$ preserves lengths);
+\item[(ii)] two points $p,p'\in S$ on the same cycle give the same edge (same target cycle and same phase), since $x|_{D(p)}$ is determined by one image;
+\item[(iii)] no two distinct cycles have edges to the same target ($\bar x$ is a bijection).
+\end{enumerate}
+When (i)--(iii) hold, every vertex of $\Gamma$ has in- and out-degree at most one, so the connected components of $\Gamma$ are directed paths and directed cycles; moreover, since $\bar x^{3}=\mathrm{id}$, the component containing a touched cycle $D$ is contained in the $\bar x$-orbit of $D$, which has size $1$ or $3$. Hence a root exists only if every component is one of:
+\begin{enumerate}
+\item[(a)] a loop $D\to D$: then $D$ is a singleton, which requires $3\nmid\ell(D)$ and phase $d\equiv k\pmod\ell$ with $3k\equiv1$ (one root restricted to $D$, or none);
+\item[(b)] a directed $3$-cycle $D_1\to D_2\to D_3\to D_1$ with phases $d_1,d_2,d_3$: it is a complete triple; the composite $D_1\to D_1$ is $t^{d_1+d_2+d_3}$ and must equal $t$, i.e.\ $d_1+d_2+d_3\equiv1\pmod\ell$ (one root restricted to the triple, or none);
+\item[(c)] a path with two edges $D_1\to D_2\to D_3$: it is the triple $\{D_1,D_2,D_3\}$, and $x|_{D_3}$ is determined by $x^{3}=t$; exactly one root restricted to the triple;
+\item[(d)] a path with one edge $D_1\to D_2$: the triple must be completed by a third cycle $D_3$ of length $\ell=\ell(D_1)$ which is \emph{free}, i.e.\ isolated in $\Gamma$ (every touched cycle already carries an edge and belongs to another component); given $D_3$ there are $\ell$ choices for $x(x(p_1))\in D_3$, after which $x$ is determined on the triple.
+\end{enumerate}
+Components of any other shape (a directed $2$-cycle, a cycle of length $\ge4$, a path with $\ge3$ edges) are incompatible with $\bar x^{3}=\mathrm{id}$ and give no root. Conversely, suppose (i)--(iii) hold, every component is of type (a)--(d) with the stated congruences, and let $n_\ell$ be the number of free cycles of length $\ell$ and $q_\ell$ the number of components of type (d) of length $\ell$. A root $x$ with $x|_S=f$ is then exactly: a choice, for the $q_\ell$ components of type (d), of distinct free third cycles and phases, $n_\ell(n_\ell-1)\cdots(n_\ell-q_\ell+1)\,\ell^{\,q_\ell}$ possibilities, together with an arbitrary cube root (Lemma~\ref{lem:cuberoots}) of $t$ restricted to the $n_\ell-q_\ell$ remaining free cycles, for each $\ell$. Therefore the number of roots is
+\begin{equation}\label{eq:prescribedcount}
+\prod_{\ell}\ (n_\ell)_{q_\ell}\,\ell^{\,q_\ell}\ \sum_{k}\frac{(n_\ell-q_\ell)!}{k!\,6^{k}\,(n_\ell-q_\ell-3k)!}\,(2\ell^{2})^{k}\,\sigma_\ell^{\,n_\ell-q_\ell-3k},
+\end{equation}
+(falling factorial $(n)_q$; the product is $0$ if some $n_\ell<q_\ell$, or if some component violates (a)--(d)); in particular a root exists iff (i)--(iii) hold, all components are of type (a)--(d) with the stated congruences, $n_\ell\ge q_\ell$ for all $\ell$, and $n_\ell-q_\ell\equiv0\pmod 3$ for every $\ell\equiv0\pmod3$. Building $\Gamma$ and checking all conditions takes $O(N)$ operations once the cycles of $t$ are known.
+\end{proof}
+
+\begin{lem}[bounded support]\label{lem:support}
+If $|\supp(a)|=s$, the number of solutions of $x\,a\,x^{2}=c$ is computed, and in particular $\Pthree$ is decided, in time $O(N^{s+1})$, hence $N^{O(s)}$.
+\end{lem}
+\begin{proof}
+Let $S=\supp(a)$, $|S|=s$. By Lemma~\ref{lem:conj}, $x$ is a solution iff $c=b\,x^{3}$ with $b=xax^{-1}$. The permutation $b$ is determined by $f:=x|_{S}$: $\supp(b)=f(S)$ and $b(f(p))=f(a(p))$ for $p\in S$; write $b=b_f$. Conversely, let $f\colon S\to[N]$ be any injection, $b_f$ the permutation just described (it is well defined because $a(S)=S$), and $t_f=b_f^{-1}c$. If $x^{3}=t_f$ and $x|_S=f$, then $xax^{-1}$ agrees with $b_f$ on $f(S)=x(S)$ and is the identity off $x(S)$, so $xax^{-1}=b_f$ and $c=b_f t_f=xax^{-1}x^{3}=xax^{2}$. Hence
+\[
+\{x:\ xax^{2}=c\}\;=\;\bigsqcup_{f\colon S\hookrightarrow[N]}\{x:\ x^{3}=t_f,\ x|_{S}=f\},
+\]
+the union being disjoint since $f=x|_S$ is recovered from $x$. There are $N!/(N-s)!\le N^{s}$ injections $f$, and for each of them the cardinality of the right-hand set is computed in $O(N)$ time by Lemma~\ref{lem:prescribed}. Summing gives the number of solutions in $O(N^{s+1})$ time.
+\end{proof}
+
+% ---------------------------------------------------------------- lem:cent (full proof, arbitrary a)
+\begin{lem}[solutions commuting with the constant]\label{lem:cent}
+Let $a\in\Sym(N)$ have $m_L$ cycles of length $L$, so that $\Cent(a)\cong\prod_{L}\ZZ_L\wr\Sym(m_L)$. The solutions of $x\,a\,x^{2}=c$ that commute with $a$ are exactly the cube roots of $t=a^{-1}c$ lying in $\Cent(a)$; they exist only if $c\in\Cent(a)$. Suppose $c\in\Cent(a)$. For each $L$, $t$ permutes the $m_L$ cycles of $a$ of length $L$; let $\rho_L$ be this permutation of cycles, and for each $\rho_L$-cycle $\Delta$, of length $\ell$, define its \emph{rotation} $R(\Delta)\in\ZZ_L$ by $t^{\ell}|_{C}=a^{R(\Delta)}|_{C}$ for one (equivalently every) $a$-cycle $C\in\Delta$. Let $n_{L}(\ell,R)$ be the number of $\rho_L$-cycles of length $\ell$ and rotation $R$. Call the class $(L,\ell,R)$ \emph{free} if $3\nmid\ell$ and ($3\nmid L$ or $R\equiv0\pmod3$), and \emph{bound} otherwise. Then:
+\begin{enumerate}
+\item[(i)] $t$ has a cube root in $\Cent(a)$ iff $3\mid n_L(\ell,R)$ for every bound class $(L,\ell,R)$;
+\item[(ii)] the number of solutions commuting with $a$ is
+\begin{equation}\label{eq:centcount}
+\prod_{L}\ \prod_{(\ell,R)}\ \sum_{k=0}^{\lfloor n/3\rfloor}\frac{n!}{k!\,6^{k}\,(n-3k)!}\,(2\ell^{2}L^{2})^{k}\,\sigma^{\,n-3k},
+\qquad n=n_L(\ell,R),\quad
+\sigma=\begin{cases}0&\text{bound class},\\ 1&\text{free class},\ 3\nmid L,\\ 3&\text{free class},\ 3\mid L;\end{cases}
+\end{equation}
+\item[(iii)] both are computed in $O(N)$ time after the cycle decompositions of $a$ and $t$; in particular, deciding whether $x\,a\,x^{2}=c$ has a solution commuting with $a$ is polynomial.
+\end{enumerate}
+For $a$ consisting of $m$ cycles of one length $L$ with $\gcd(L,3)=1$ this reduces to: $t$ has a cube root in $\Cent(a)$ iff for every $\ell\equiv0\pmod 3$ and every $R\in\ZZ_L$ the number of $\rho$-cycles of length $\ell$ and rotation $R$ is divisible by~$3$.
+\end{lem}
+\begin{proof}
+If $xa=ax$ then $xax^{2}=ax^{3}$, so the equation reads $x^{3}=a^{-1}c=t$; then $t=x^{3}\in\Cent(a)$, hence $c=at\in\Cent(a)$. Conversely a cube root $x\in\Cent(a)$ of $t$ satisfies $xax^{2}=ax^{3}=c$. This proves the first assertion. Assume now $c\in\Cent(a)$, so $t\in\Cent(a)$.
+
+\emph{Coordinates.} Fix for each $a$-cycle $C_i$ a base point $p_i$, so $C_i=\{a^{u}p_i:\ u\in\ZZ_{L}\}$, $L=|C_i|$. An element $g\in\Cent(a)$ maps each $C_i$ onto an $a$-cycle $C_{\pi(i)}$ of the same length and commutes with $a$, so $g(a^{u}p_i)=a^{u+v_i}p_{\pi(i)}$ for a unique $v_i\in\ZZ_L$: write $g=(v,\pi)$. The composition rule is $(w,\sigma)(v,\pi)=(v+w\circ\pi,\ \sigma\pi)$ where $(w\circ\pi)_i=w_{\pi(i)}$, hence
+\[
+(v,\pi)^{3}=\bigl(v+v\circ\pi+v\circ\pi^{2},\ \pi^{3}\bigr),\qquad\text{i.e.}\quad ((v,\pi)^{3})_i=v_i+v_{\pi(i)}+v_{\pi^{2}(i)} .
+\]
+Since $\pi$ preserves cycle lengths, $\Cent(a)$ is the direct product over $L$ of the groups $\ZZ_L\wr\Sym(m_L)$ acting on the cycles of length $L$, and $t$ is a cube in $\Cent(a)$ iff each component is a cube in its factor, the number of roots being the product of the numbers of roots of the components. We therefore fix $L$, write $m=m_L$, $t=(r,\rho)$ with $\rho=\rho_L\in\Sym(m)$, $r\in\ZZ_L^{m}$, and look for $(v,\pi)$ with
+\begin{equation}\label{eq:cubeeq}
+\pi^{3}=\rho,\qquad v_i+v_{\pi(i)}+v_{\pi^{2}(i)}=r_i\quad(1\le i\le m).
+\end{equation}
+Note that for a $\rho$-cycle $\Delta=(i_1\,\ldots\,i_\ell)$ one has $t^{\ell}(a^{u}p_{i_1})=a^{u+r_{i_1}+\cdots+r_{i_\ell}}p_{i_1}$, so $R(\Delta)=\sum_{i\in\Delta}r_i$; this is independent of the base points (changing $p_i$ to $a^{e_i}p_i$ replaces $r_i$ by $r_i+e_i-e_{\rho(i)}$, which does not change sums along $\rho$-cycles) and of the chosen $C\in\Delta$ (conjugating by $t$).
+
+\emph{Reduction to the cycles of $\pi$.} By Lemma~\ref{lem:cuberoots} applied in $\Sym(m)$, a cube root $\pi$ of $\rho$ is given by a partition of the $\rho$-cycles into singletons (of length $\ell\not\equiv0\pmod3$, where $\pi=\rho^{k}$, $3k\equiv1\pmod\ell$) and triples of equal length $\ell$ (each carrying $2\ell^{2}$ choices of $\pi$), and the $\pi$-cycles are exactly these singletons and the unions of these triples. The second condition in~\eqref{eq:cubeeq} splits along the $\pi$-cycles: for a $\pi$-cycle $(i_0\,i_1\,\ldots\,i_{\lambda-1})$ of length $\lambda$, writing $u_j=v_{i_j}$ and $s_j=r_{i_j}$ (indices modulo $\lambda$), it reads
+\begin{equation}\label{eq:circ}
+u_j+u_{j+1}+u_{j+2}=s_j\qquad (j\in\ZZ_\lambda),
+\end{equation}
+a circulant linear system over $\ZZ_L$, and the systems for different $\pi$-cycles involve disjoint sets of unknowns. We count the solutions of~\eqref{eq:circ} in the two cases.
+
+\emph{Case of a triple} ($\lambda=3\ell$, the $\pi$-cycle is the union of three $\rho$-cycles $\Delta_0,\Delta_1,\Delta_2$ with $\Delta_\varepsilon=\{i_j:\ j\equiv\varepsilon\pmod 3\}$). Subtracting consecutive equations gives $u_{j+3}-u_j=s_{j+1}-s_j$; summing over $j,j+3,\ldots,j+3(\ell-1)$ yields, for a solution,
+\[
+0=u_{j+3\ell}-u_j=\sum_{q=0}^{\ell-1}\bigl(s_{j+3q+1}-s_{j+3q}\bigr)=R(\Delta_{\varepsilon+1})-R(\Delta_{\varepsilon})\qquad(j\equiv\varepsilon),
+\]
+so $R(\Delta_0)=R(\Delta_1)=R(\Delta_2)$ is necessary. Conversely, if the three rotations are equal, choose $u_0,u_1\in\ZZ_L$ arbitrarily and define $u_{j+2}=s_j-u_j-u_{j+1}$ for $j=0,1,2,\ldots$; this sequence satisfies $u_{j+3}-u_j=s_{j+1}-s_j$ for all $j\ge0$, hence $u_{j+3\ell}=u_j$ by the computation above (now valid because the rotations are equal), so it is $3\ell$-periodic and satisfies~\eqref{eq:circ} for every $j\in\ZZ_\lambda$. The system has exactly $L^{2}$ solutions (the pair $(u_0,u_1)$ determines the solution). Together with the $2\ell^{2}$ choices of $\pi$ on the triple, a triple of $\rho$-cycles of equal length $\ell$ and equal rotation $R$ contributes a factor $2\ell^{2}L^{2}$, and a triple with unequal rotations contributes nothing. In particular the rotation sums along the three $\rho$-cycles are all equal to $\sum_j u_j$; this is where the earlier sketch used $\gcd(L,3)=1$, which is in fact not needed.
+
+\emph{Case of a singleton} ($\lambda=\ell$, $3\nmid\ell$, $\pi=\rho^{k}$ on the $\rho$-cycle $\Delta$). The system~\eqref{eq:circ} is multiplication by $\Phi(X)=1+X+X^{2}$ in the ring $A_L=\ZZ_L[X]/(X^{\ell}-1)$, after identifying $u$ and $s$ with $\sum_j u_jX^{-j}$ and $\sum_j s_jX^{-j}$ (so that $(\Phi u)_j=u_j+u_{j+1}+u_{j+2}$). The resultant of $\Phi$ and $X^{\ell}-1$ is $\prod_{\omega^{3}=1,\omega\ne1}(\omega^{\ell}-1)=(\omega-1)(\omega^{2}-1)=3$ for $\ell\equiv\pm1\pmod3$ (then $\omega^{\ell}$ runs over the two primitive cube roots of unity, and $(\omega-1)(\omega^{2}-1)=\omega^{3}-\omega^{2}-\omega+1=3$). Hence there are polynomials $U,V\in\ZZ[X]$ with $U\Phi+V(X^{\ell}-1)=3$, and:
+\begin{itemize}
+\item if $3\nmid L$, then $3$ is a unit of $\ZZ_L$, $\Phi$ is invertible in $A_L$ (inverse $3^{-1}U$) and~\eqref{eq:circ} has exactly one solution for every $s$;
+\item if $3\mid L$, write $L=3^{e}L'$ with $3\nmid L'$, $e\ge1$, so that $A_L\cong A_{3^{e}}\times A_{L'}$. Over $A_{L'}$ the system is uniquely solvable as before. Over $\ZZ_{3^{e}}$, since $3\nmid\ell$, the polynomial $X^{\ell}-1$ is separable modulo $3$ with the simple root $1$, so by Hensel's lemma $X^{\ell}-1=(X-1)\Psi(X)$ in $\ZZ_{3^{e}}[X]$ with $\Psi(1)\equiv\ell$ a unit, and $A_{3^{e}}\cong\ZZ_{3^{e}}\times\ZZ_{3^{e}}[X]/(\Psi)$ by the Chinese remainder theorem. In the first factor (evaluation at $X=1$) multiplication by $\Phi$ is multiplication by $\Phi(1)=3$, whose image is $3\ZZ_{3^{e}}$ and whose kernel has $3$ elements; in the second factor, $\Phi\equiv(X-1)^{2}\pmod 3$ is coprime to $\Psi$ modulo $3$ (because $X^{\ell}-1$ is separable modulo~$3$), hence $\Phi$ is a unit of $\ZZ_{3^{e}}[X]/(\Psi)$. Therefore~\eqref{eq:circ} is solvable iff the evaluation at $X=1$ of $s$, namely $\sum_j s_j=R(\Delta)$, lies in $3\ZZ_{3^{e}}$, i.e.\ $R(\Delta)\equiv0\pmod 3$, and then it has exactly $3$ solutions.
+\end{itemize}
+Thus a singleton $\rho$-cycle $\Delta$ of length $\ell\not\equiv0\pmod 3$ contributes a factor $1$ if $3\nmid L$, a factor $3$ if $3\mid L$ and $R(\Delta)\equiv0\pmod3$, and nothing if $3\mid L$ and $R(\Delta)\not\equiv0\pmod 3$ (necessity in the last case is also seen directly: summing~\eqref{eq:circ} over $j$ gives $R(\Delta)=3\sum_j u_j\in3\ZZ_L$).
+
+\emph{Conclusion.} A cube root of $t$ in $\ZZ_L\wr\Sym(m)$ is therefore the same as a partition of the $\rho$-cycles into singletons and triples such that every singleton lies in a free class and every triple consists of three cycles of the same class $(\ell,R)$, together with the choices counted above ($\sigma$ per singleton, $2\ell^{2}L^{2}$ per triple). Each class $(\ell,R)$ can be partitioned independently; a bound class admits only triples, hence needs $3\mid n_L(\ell,R)$, while a free class admits any partition. This proves (i), and summing over the number $k$ of triples in each class gives~\eqref{eq:centcount}, i.e.\ (ii). For (iii), the cycles of $a$, the permutations $\rho_L$ and the rotations $r_i$ are obtained in $O(N)$ time from the image tuples of $a$ and $t$ (one needs, for each cycle $C_i$, the position of $t(p_i)$ in its $a$-cycle), and the class counts $n_L(\ell,R)$ follow by one pass over the cycles of the $\rho_L$. The special case $\gcd(L,3)=1$ is the statement that the bound classes are exactly those with $3\mid\ell$.
+\end{proof}
+\begin{rem}
+The criterion of Lemma~\ref{lem:cent} was checked against the enumeration of $\Cent(a)$ for every cycle type $a$ and every $c\in\Cent(a)$ with $N\le8$ ($49\,906$ pairs, $43\,206$ of them at $N=8$), against brute force over $\Sym(N)$ for $N\le7$, and on the blockwise families $L\in\{3,6,9,12\}$ with $3\mid L$ up to $|\Cent(a)|=524\,880$; Lemmas~\ref{lem:prescribed} and~\ref{lem:support} were checked against brute force over $\Sym(N)$ for all $a$ with $|\supp a|\in\{2,3,4\}$ and all $c$ at $N\le6$ (and $s=2$ at $N=7$), and on $2\,496$ random instances for $N\le9$ (\texttt{lemmas\_track.py}, \texttt{lemmas\_results.json}).
+\end{rem}

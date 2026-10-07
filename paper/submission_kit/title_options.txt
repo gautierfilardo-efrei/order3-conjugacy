@@ -1,0 +1,11 @@
+Title options (the first is the one set in p3_article.tex v7)
+
+1. One-variable equations of length three over symmetric groups: normal forms, the hardness of conjugacy by an element of
+   prescribed order, and layered permutation walks          [current; accurate; long]
+2. Conjugacy by an element of prescribed order is NP-complete, and the equation x a x^2 = c over symmetric groups
+   [shorter; leads with the theorem]
+3. The equation x a x^2 = c over symmetric groups and the complexity of conjugacy by elements of prescribed order
+   [neutral; equation first]
+
+If option 2 or 3 is chosen, change the title in three places: p3_article.tex (\title), CITATION.cff (preferred-citation.title),
+README.md (first line), and re-save the repository release.
